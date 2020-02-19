@@ -10,8 +10,6 @@
 [![Linux & macOS Build Status](https://travis-ci.org/Pext/Pext.svg?branch=master)](https://travis-ci.org/Pext/Pext)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/73oaa4x1spa5vumx/branch/master?svg=true)](https://ci.appveyor.com/project/TheLastProject/pext/branch/master)
 [![ReadTheDocs](https://readthedocs.org/projects/pext/badge/?version=latest)](https://pext.readthedocs.io/en/latest/?badge=latest)
-[![Translation status](https://hosted.weblate.org/widgets/pext/-/svg-badge.svg)](https://hosted.weblate.org/engage/pext/?utm_source=widget)
-
 [![Matrix](https://img.shields.io/matrix/pext:matrix.org.svg)](https://riot.im/app/#/room/#pext:matrix.org)
 
 ## Contents
@@ -87,6 +85,10 @@ For command line options, use `--help`.
 - Ctrl+Q: Quit
 
 ## Community
+
+<a href="https://hosted.weblate.org/engage/pext/?utm_source=widget">
+    <img src="https://hosted.weblate.org/widgets/pext/-/pext/open-graph.png" alt="Translation status" align="right" width="480px">
+</a>
 
 If you need support or just want to chat with our community, we have the following options:
 
