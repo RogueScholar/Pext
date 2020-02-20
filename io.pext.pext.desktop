@@ -1,9 +1,18 @@
 [Desktop Entry]
+Version=1.1
 Type=Application
 Name=Pext
-Comment=Python-based extendable tool
-Categories=Utility;
+GenericName=Tray gadget
+Comment=Python-based extensible tool
 Exec=pext
 Icon=pext
-StartupNotify=false
+Categories=Utility;Qt;KDE;
+Keywords=tray;panel;launcher;radio;weather;emoji;clipboard;
+StartupNotify=true
+StartupWMClass=Pext
+DBusActivatable=false
 Terminal=false
+NoDisplay=false
+Hidden=false
+X-KDE-SubstituteUID=false
+X-KDE-Username=
