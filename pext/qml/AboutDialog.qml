@@ -92,7 +92,7 @@ Dialog {
                 Item {
                     height: childrenRect.height
                     width: parent.parent.width
-    
+
                     Text {
                         color: palette.text
                         width: parent.width
