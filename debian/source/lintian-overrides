@@ -1,0 +1,2 @@
+# Upstream release tarballs are unsigned
+pext source: debian-watch-does-not-check-gpg-signature

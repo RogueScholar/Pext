@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+DEB_BUILD_MAINT_OPTIONS = future=+lfs hardening=+all reproducible=+fixfilepath
+DH_INTERNAL_OPTIONS     = -v
+DH_VERBOSE              = 1
+PYBUILD_NAME            = pext
+export DEB_BUILD_MAINT_OPTIONS DH_INTERNAL_OPTIONS DH_VERBOSE PYBUILD_NAME
+
+DPKG_EXPORT_BUILDFLAGS  = 1
+include /usr/share/dpkg/default.mk
+
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+
+override_dh_auto_clean:
+	rm -rf $(CURDIR)/Pext.egg-info
+	dh_auto_clean -O--buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install -O--buildsystem=pybuild
+	rm -f $(CURDIR)/debian/python3-pext/usr/lib/python3.7/dist-packages/pext_dev/module/LICENSE
+	rm -f $(CURDIR)/debian/python3-pext/usr/lib/python3.7/dist-packages/pext_dev/theme/LICENSE
