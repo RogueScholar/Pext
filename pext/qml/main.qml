@@ -771,7 +771,7 @@ ApplicationWindow {
                         id: menuOutputSeparatorGroup
                         objectName: "menuOutputSeparatorGroup"
                     }
-    
+
                     MenuItem {
                         objectName: "menuOutputSeparatorNone"
                         text: qsTr("Nothing")
