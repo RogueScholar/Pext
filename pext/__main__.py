@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 # Copyright (c) 2015 - 2019 Sylvia van Os <sylvia@hackerchick.me>
 #
 # This file is part of Pext.
@@ -16,13 +15,11 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 """Pext.
 
 This is the main Pext file. It will initialize, run and manage the whole of
 Pext.
 """
-
 import argparse
 import atexit
 import configparser
@@ -32,22 +29,28 @@ import platform
 import re
 import signal
 import sys
+import tempfile
 import threading
 import time
 import traceback
 import webbrowser
-import tempfile
-import psutil
-
 from datetime import datetime
 from distutils.util import strtobool
 from enum import IntEnum
 from functools import partial
 from importlib import reload  # type: ignore
-from inspect import getmembers, isfunction, ismethod, signature
+from inspect import getmembers
+from inspect import isfunction
+from inspect import ismethod
+from inspect import signature
+from shutil import copytree
+from shutil import rmtree
+from subprocess import CalledProcessError
+from subprocess import check_output
+from subprocess import Popen
+
+import psutil
 from pkg_resources import parse_version
-from shutil import copytree, rmtree
-from subprocess import check_output, CalledProcessError, Popen
 
 try:
     from typing import Any, Callable, Dict, List, Optional, Set, Union
