@@ -21,7 +21,7 @@ cleanup () {
 trap cleanup EXIT
 
 # store repo root as variable
-REPO_ROOT=$(readlink -f $(dirname $(dirname "$0")))
+REPO_ROOT=$(readlink -f "$(dirname "$(dirname "$0")")")
 OLD_CWD=$(readlink -f .)
 
 pushd "$BUILD_DIR"/
@@ -119,9 +119,9 @@ ls -al AppDir/
 
 python "$REPO_ROOT/setup.py" || true
 if [ "$PEXT_BUILD_PORTABLE" -eq 1 ]; then
-  export VERSION=portable-$(cat "$REPO_ROOT/pext/VERSION")
+  export VERSION=portable-"$(cat "$REPO_ROOT/pext/VERSION")"
 else
-  export VERSION=$(cat "$REPO_ROOT/pext/VERSION")
+  export VERSION="$(cat "$REPO_ROOT/pext/VERSION")"
 fi
 
 wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
