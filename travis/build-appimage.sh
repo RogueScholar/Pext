@@ -5,29 +5,29 @@ set -e
 
 # use RAM disk if possible
 if [ -d /dev/shm ] && [ "$CI" != "" ]; then
-    TEMP_BASE=/dev/shm
+  TEMP_BASE=/dev/shm
 else
-    TEMP_BASE=/tmp
+  TEMP_BASE=/tmp
 fi
 
 BUILD_DIR=$(mktemp -d -p "$TEMP_BASE" Pext-AppImage-build-XXXXXX)
 
-cleanup () {
-    if [ -d "$BUILD_DIR" ]; then
-        rm -rf "$BUILD_DIR"
-    fi
+cleanup() {
+  if [ -d "$BUILD_DIR" ]; then
+    rm -rf "$BUILD_DIR"
+  fi
 }
 
 trap cleanup EXIT
 
 # store repo root as variable
-REPO_ROOT=$(readlink -f $(dirname $(dirname "$0")))
+REPO_ROOT=$(readlink -f "$(dirname "$(dirname "$0")")")
 OLD_CWD=$(readlink -f .)
 
 pushd "$BUILD_DIR"/
 
 # set up custom AppRun script
-cat > AppRun.sh <<\EAT
+cat >AppRun.sh <<\EAT
 #! /bin/sh
 
 # make sure to set APPDIR when run directly from the AppDir
@@ -49,11 +49,11 @@ done
 EAT
 
 if [ "$PEXT_BUILD_PORTABLE" -eq 1 ]; then
-cat >> AppRun.sh <<\EAT
+  cat >>AppRun.sh <<\EAT
   exec "$APPDIR"/usr/bin/python -m pext --portable "$@"
 EAT
 else
-cat >> AppRun.sh <<\EAT
+  cat >>AppRun.sh <<\EAT
   exec "$APPDIR"/usr/bin/python -m pext "$@"
 EAT
 fi
@@ -62,7 +62,7 @@ chmod +x AppRun.sh
 
 # get linuxdeploy and its conda plugin
 wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-wget https://raw.githubusercontent.com/TheAssassin/linuxdeploy-plugin-conda/e714783a1ca6fffeeb9dd15bbfce83831bb196f8/linuxdeploy-plugin-conda.sh  # We use an older linuxdeploy-plugin-conda because commit 76c8c8bf4e7dd435eda9c9a1de88a980c697f58f breaks the Pext build
+wget https://raw.githubusercontent.com/TheAssassin/linuxdeploy-plugin-conda/e714783a1ca6fffeeb9dd15bbfce83831bb196f8/linuxdeploy-plugin-conda.sh # We use an older linuxdeploy-plugin-conda because commit 76c8c8bf4e7dd435eda9c9a1de88a980c697f58f breaks the Pext build
 
 # Don't remove include, needed for compiling some extensions
 sed -i 's;rm -rf include/;;g' linuxdeploy-plugin-conda.sh
@@ -84,7 +84,7 @@ APPIMAGEUPDATE_TAG=continuous
 # if building for a tag, embed "latest" to make AppImageUpdate use the latest tag on updates
 # you could call it the "stable" channel
 if [ "$TRAVIS_TAG" != "" ]; then
-    APPIMAGEUPDATE_TAG=latest
+  APPIMAGEUPDATE_TAG=latest
 fi
 
 if [ "$PEXT_BUILD_PORTABLE" -eq 1 ]; then
@@ -119,9 +119,9 @@ ls -al AppDir/
 
 python "$REPO_ROOT/setup.py" || true
 if [ "$PEXT_BUILD_PORTABLE" -eq 1 ]; then
-  export VERSION=portable-$(cat "$REPO_ROOT/pext/VERSION")
+  export VERSION=portable-"$(cat "$REPO_ROOT/pext/VERSION")"
 else
-  export VERSION=$(cat "$REPO_ROOT/pext/VERSION")
+  export VERSION="$(cat "$REPO_ROOT/pext/VERSION")"
 fi
 
 wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
