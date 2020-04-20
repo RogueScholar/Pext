@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 # Copyright (c) 2015 - 2019 Sylvia van Os <sylvia@hackerchick.me>
 #
 # This file is part of Pext.
@@ -16,13 +15,11 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 """Pext.
 
 This is the main Pext file. It will initialize, run and manage the whole of
 Pext.
 """
-
 import argparse
 import atexit
 import configparser
@@ -42,28 +39,50 @@ from distutils.util import strtobool
 from enum import IntEnum
 from functools import partial
 from importlib import reload  # type: ignore
-from inspect import getmembers, isfunction, ismethod, signature
-from queue import Empty, Queue
-from shutil import copytree, rmtree
-from subprocess import CalledProcessError, Popen, check_output
+from inspect import getmembers
+from inspect import isfunction
+from inspect import ismethod
+from inspect import signature
+from queue import Empty
+from queue import Queue
+from shutil import copytree
+from shutil import rmtree
+from subprocess import CalledProcessError
+from subprocess import check_output
+from subprocess import Popen
 from urllib.parse import quote_plus
-
-from pkg_resources import parse_version
 
 import psutil
 import requests
 from constants import USE_INTERNAL_UPDATER  # noqa: E402
-from dulwich import client, porcelain
+from dulwich import client
+from dulwich import porcelain
 from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
 from dulwich.repo import Repo
 from pext_base import ModuleBase  # noqa: E402
-from pext_helpers import Action, SelectionType  # noqa: E402
-from PyQt5.Qt import (QClipboard, QIcon, QObject, QQmlApplicationEngine,
-                      QQmlComponent, QQmlContext, QQmlProperty, QUrl)
-from PyQt5.QtCore import QLocale, QStringListModel, Qt, QTranslator
-from PyQt5.QtGui import QColor, QPalette, QWindow
-from PyQt5.QtWidgets import (QAction, QApplication, QMenu, QStyleFactory,
-                             QSystemTrayIcon)
+from pext_helpers import Action
+from pext_helpers import SelectionType
+from pkg_resources import parse_version
+from PyQt5.Qt import QClipboard
+from PyQt5.Qt import QIcon
+from PyQt5.Qt import QObject
+from PyQt5.Qt import QQmlApplicationEngine
+from PyQt5.Qt import QQmlComponent
+from PyQt5.Qt import QQmlContext
+from PyQt5.Qt import QQmlProperty
+from PyQt5.Qt import QUrl
+from PyQt5.QtCore import QLocale
+from PyQt5.QtCore import QStringListModel
+from PyQt5.QtCore import Qt
+from PyQt5.QtCore import QTranslator
+from PyQt5.QtGui import QColor
+from PyQt5.QtGui import QPalette
+from PyQt5.QtGui import QWindow
+from PyQt5.QtWidgets import QAction
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QMenu
+from PyQt5.QtWidgets import QStyleFactory
+from PyQt5.QtWidgets import QSystemTrayIcon
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 

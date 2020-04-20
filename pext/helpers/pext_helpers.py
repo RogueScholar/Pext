@@ -14,13 +14,11 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 """Pext Helpers.
 
 This file contains various functionality that is relevant to both Pext
 and modules and helps keep the API consistent.
 """
-
 from enum import Enum
 
 
