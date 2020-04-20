@@ -771,7 +771,7 @@ ApplicationWindow {
                         id: menuOutputSeparatorGroup
                         objectName: "menuOutputSeparatorGroup"
                     }
-    
+
                     MenuItem {
                         objectName: "menuOutputSeparatorNone"
                         text: qsTr("Nothing")
@@ -1017,7 +1017,23 @@ ApplicationWindow {
             id: tabs
             objectName: "tabs"
 
+            signal disableRequest(int index, int reason);
+            signal updateStateRequest(int index, string state);
             signal removeRequest(int index);
+
+            onDisableRequest: {
+                tabs.getTab(index).item.disableReason = reason;
+                tabs.getTab(index).item.progressStates = [];
+            }
+
+            onUpdateStateRequest: {
+                var disableReason = tabs.getTab(index).item.disableReason;
+                tabs.getTab(index).item.progressStates.push(state);
+
+                // Forcefully ensure redraw
+                tabs.getTab(index).item.disableReason = 0;
+                tabs.getTab(index).item.disableReason = disableReason;
+            }
 
             onRemoveRequest: {
                 tabs.getTab(index).sourceComponent = undefined;
