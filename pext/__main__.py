@@ -32,51 +32,48 @@ import platform
 import re
 import signal
 import sys
+import tempfile
 import threading
 import time
 import traceback
 import webbrowser
-import tempfile
-import psutil
-
 from datetime import datetime
 from distutils.util import strtobool
 from enum import IntEnum
 from functools import partial
 from importlib import reload  # type: ignore
 from inspect import getmembers, isfunction, ismethod, signature
-from pkg_resources import parse_version
+from queue import Empty, Queue
 from shutil import copytree, rmtree
-from subprocess import check_output, CalledProcessError, Popen
+from subprocess import CalledProcessError, Popen, check_output
+from urllib.parse import quote_plus
+
+from pkg_resources import parse_version
+
+import psutil
+import requests
+from constants import USE_INTERNAL_UPDATER  # noqa: E402
+from dulwich import client, porcelain
+from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
+from dulwich.repo import Repo
+from pext_base import ModuleBase  # noqa: E402
+from pext_helpers import Action, SelectionType  # noqa: E402
+from PyQt5.Qt import (QClipboard, QIcon, QObject, QQmlApplicationEngine,
+                      QQmlComponent, QQmlContext, QQmlProperty, QUrl)
+from PyQt5.QtCore import QLocale, QStringListModel, Qt, QTranslator
+from PyQt5.QtGui import QColor, QPalette, QWindow
+from PyQt5.QtWidgets import (QAction, QApplication, QMenu, QStyleFactory,
+                             QSystemTrayIcon)
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 try:
     from typing import Any, Callable, Dict, List, Optional, Set, Union
 except ImportError:
     from backports.typing import Any, Callable, Dict, List, Optional, Set, Union  # type: ignore  # noqa: F401
-from urllib.parse import quote_plus
-from queue import Queue, Empty
 
-import requests
 
-from dulwich import client, porcelain
-from dulwich.repo import Repo
-from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
 
-from PyQt5.QtCore import QStringListModel, QLocale, QTranslator, Qt
-from PyQt5.QtWidgets import QApplication, QAction, QMenu, QStyleFactory, QSystemTrayIcon
-from PyQt5.Qt import (
-    QClipboard,
-    QIcon,
-    QObject,
-    QQmlApplicationEngine,
-    QQmlComponent,
-    QQmlContext,
-    QQmlProperty,
-    QUrl,
-)
-from PyQt5.QtGui import QPalette, QColor, QWindow
-from watchdog.events import FileSystemEventHandler
-from watchdog.observers import Observer
 
 client.get_ssh_vendor = ParamikoSSHVendor
 pyautogui_error = None
@@ -124,10 +121,7 @@ class AppFile:
 sys.path.append(os.path.join(AppFile.get_path(), "helpers"))
 sys.path.append(os.path.join(AppFile.get_path()))
 
-from pext_base import ModuleBase  # noqa: E402
-from pext_helpers import Action, SelectionType  # noqa: E402
 
-from constants import USE_INTERNAL_UPDATER  # noqa: E402
 
 
 class MinimizeMode(IntEnum):
