@@ -1206,7 +1206,7 @@ class ObjectManager():
                 metadata.update(json.load(metadata_json_i18n))
         except (FileNotFoundError, json.decoder.JSONDecodeError):
             print("Object {} has no metadata_{}.json file".format(location,
-                  LocaleManager.find_best_locale(Settings.get('locale')).name()))
+                                                                  LocaleManager.find_best_locale(Settings.get('locale')).name()))
 
         # Ensure the required metadata is set
         if 'id' not in metadata:
@@ -2173,7 +2173,7 @@ class ViewModel():
             # Get current match
             try:
                 current_match = self.context_menu_model_list_full.stringList()[
-                        QQmlProperty.read(self.context_menu_model, "currentIndex")]
+                    QQmlProperty.read(self.context_menu_model, "currentIndex")]
             except IndexError:
                 pass
         # Else, search in normal list
@@ -2482,8 +2482,8 @@ class ViewModel():
         combined_list = self.filtered_entry_list + self.filtered_command_list
 
         entry = self._get_longest_common_string(
-                [entry.lower() for entry in combined_list],
-                start=current_input.lower())
+            [entry.lower() for entry in combined_list],
+            start=current_input.lower())
         if entry is None or len(entry) <= len(current_input):
             self.queue.put(
                 [Action.add_error, Translation.get("no_tab_completion_possible")])
@@ -2900,12 +2900,12 @@ class Window():
         # Enable mouse selection support
         result_list_model.entryClicked.connect(element['vm'].select)
         result_list_model.selectExplicitNoMinimize.connect(
-                    lambda: element['vm'].select(disable_minimize=True))
+            lambda: element['vm'].select(disable_minimize=True))
         result_list_model.openContextMenu.connect(element['vm'].show_context)
         result_list_model.openArgumentsInput.connect(element['vm'].input_args)
         context_menu_model.entryClicked.connect(element['vm'].select)
         context_menu_model.selectExplicitNoMinimize.connect(
-                    lambda: element['vm'].select(disable_minimize=True))
+            lambda: element['vm'].select(disable_minimize=True))
         context_menu_model.openArgumentsInput.connect(element['vm'].input_args)
         context_menu_model.closeContextMenu.connect(element['vm'].hide_context)
 
