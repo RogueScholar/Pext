@@ -2,7 +2,7 @@ dulwich==0.20.34
 paramiko==2.10.2
 psutil==5.9.0
 pynput==1.7.6
-pyqt5==5.15.6
+pyqt5==5.15.8
 requests==2.27.1
 watchdog==2.1.6
 PyAutoGUI==0.9.53; sys.platform == 'darwin'
