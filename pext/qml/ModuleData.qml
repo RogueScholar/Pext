@@ -28,6 +28,9 @@ Item {
     id: contentRow
     height: parent.height
 
+    property var disableReason: 0
+    property var progressStates: []
+
     Shortcut {
         id: enterShortcut
         enabled: false
@@ -41,6 +44,7 @@ Item {
     }
 
     GridLayout {
+        visible: !contentRow.disableReason
         id: moduleDataGrid
         anchors.fill: parent
         rowSpacing: 0
@@ -81,7 +85,7 @@ Item {
                 delegate: Component {
                     Item {
                         property variant itemData: model.modelData
-                        width: parent.width
+                        width: parent ? parent.width : 0
                         height: column.height
                         Column {
                             id: column
@@ -172,10 +176,20 @@ Item {
                         text: {
                             var text = "";
                             for (var i = 0; i < resultList.tree.length; i++) {
-                                for (var j = 0; j < i; j++) {
-                                    text += " ";
+                                if (headerText.text) {
+                                    text += "  ";
                                 }
-                                text += resultList.tree[i];
+                                for (var j = 0; j < i; j++) {
+                                    text += "  ";
+                                }
+                                var value_text = ""
+                                if (resultList.tree[i]['value']) {
+                                    value_text = resultList.tree[i]['value'] + " "
+                                }
+                                if (resultList.tree[i]['context_option']) {
+                                    value_text += "(" + resultList.tree[i]['context_option'] + ")"
+                                }
+                                text += value_text;
                                 if (i < resultList.tree.length - 1) {
                                     text += "\n";
                                 }
@@ -240,7 +254,7 @@ Item {
                 delegate: Component {
                     Item {
                         property variant itemData: model.modelData
-                        width: parent.width
+                        width: parent ? parent.width : 0
                         height: text.height
                         Column {
                             Text {
@@ -248,7 +262,7 @@ Item {
                                 width: parent.parent.width
                                 objectName: "text"
                                 text: {
-                                    var line = "<table width=" + parent.width + "><tr><td><span>" + (index >= resultListModelNormalEntries ? "<i>" : "") + "&nbsp;".repeat(resultList.tree.length) + String(display).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + (index >= resultListModelNormalEntries ? "</i>" : "") + "</td><td align='right'><code>";
+                                    var line = "<table width=" + parent.width + "><tr><td><span>" + (index >= resultListModelNormalEntries ? "<i>" : "") + "&nbsp;".repeat((resultList.tree.length + (headerText.text ? 1 : 0)) * 2) + String(display).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + (index >= resultListModelNormalEntries ? "</i>" : "") + "</td><td align='right'><code>";
                                     if (resultList.currentIndex === index) {
                                         line += (resultList.currentIndex < resultListModelNormalEntries ? enterShortcut.nativeText : argsShortcut.nativeText);
                                     } else if (resultList.currentIndex < resultListModelNormalEntries && resultListModelNormalEntries === index) {
@@ -385,5 +399,37 @@ Item {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
         }
+    }
+
+    TextEdit {
+        objectName: "disabledScreen"
+        visible: contentRow.disableReason
+
+        text: {
+            var reason = "";
+            switch (contentRow.disableReason) {
+                case 1:
+                    reason = qsTr("Module crashed.");
+                    break;
+                case 2:
+                    reason = qsTr("Updating module…");
+                    break;
+            }
+            var text = "<h2>" + reason + "</h2>";
+            for (var i = 0; i < contentRow.progressStates.length; i++) {
+                text += "<pre>" + contentRow.progressStates[i] + "</pre>";
+            }
+            return text;
+        }
+
+        color: palette.text
+        textFormat: TextEdit.RichText
+        readOnly: true
+        selectByMouse: true
+        wrapMode: TextEdit.Wrap
+        horizontalAlignment: TextEdit.AlignHCenter
+        verticalAlignment: TextEdit.AlignVCenter
+        Layout.fillWidth: true
+        padding: 10
     }
 }
