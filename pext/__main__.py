@@ -339,6 +339,9 @@ class Logger:
         print("{}\n{}\n{}".format(module_name if module_name else "Pext",
                                   message, detailed_message))
 
+        print("{}\n{}\n{}".format(module_name if module_name else "Pext",
+                                  message, detailed_message))
+
         functions = [
             {
                 'name': InternalCallProcessor.module_manager.update,
@@ -362,23 +365,6 @@ class Logger:
                 })
 
         threading.Thread(target=RunConseq, args=(functions,)).start()  # type: ignore
-
-    @staticmethod
-    def _finalize_module(arguments: List) -> None:
-        # finalize-module
-        #   tab_id
-        #   module_data (multiple fields likely, json contains also :
-        if not InternalCallProcessor.module_manager:
-            raise ValueError("Module manager not yet initialized.")
-
-        if not InternalCallProcessor.window:
-            raise ValueError("Window not yet initialized.")
-
-        InternalCallProcessor.module_manager.reload_step_load(
-            int(arguments[0]),
-            InternalCallProcessor.temp_module_datas[int(arguments[1])],
-            InternalCallProcessor.window
-        )
 
             if message["type"] == "error":
                 statusbar_message = "<font color='red'>⚠ {}</color>".format(
@@ -1943,7 +1929,18 @@ class UpdateManager:
             old_commit = repo[repo.head()]
             remote_url = UpdateManager.fix_git_url_for_dulwich(
                 UpdateManager.get_remote_url(directory))
-            remote_commit = porcelain.ls_remote(remote_url)[branch]
+            try:
+                remote_commit = porcelain.ls_remote(remote_url)[branch]
+            except Exception as e:
+                Logger.log_error(
+                    None,
+                    Translation.get(
+                        "failed_to_check_for_module_update").format(
+                            directory, e),
+                )
+                traceback.print_exc()
+
+                return False
 
             return remote_commit != old_commit.id
 
@@ -4634,10 +4631,6 @@ def _load_settings(args: argparse.Namespace) -> None:
     if args.locale:
         Settings.set("locale", args.locale)
 
-    # TODO: Remove in favor of a proper per-module selection
-    if args.force_module_branch_type is not None:
-        Settings.set('_force_module_branch_type', args.force_module_branch_type)
-
     if args.list_locales:
         locales = LocaleManager.get_locales()
         for locale in locales:
@@ -4921,10 +4914,6 @@ def main() -> None:
     else:
         app_icon = QIcon(
             os.path.join(AppFile.get_path(), "images", "128x128", "pext.png"))
-
-    # Create managers
-    module_manager = ModuleManager()
-    theme_manager = ThemeManager()
 
     app.setWindowIcon(app_icon)
 
