@@ -31,7 +31,6 @@ import signal
 import sys
 import tempfile
 import threading
-import time
 import traceback
 import webbrowser
 from datetime import datetime
@@ -53,16 +52,13 @@ import psutil
 from pkg_resources import parse_version
 
 try:
-    from typing import Any, Callable, Dict, List, Optional, Set, Union
+    from typing import Any, Callable, Dict, List, Optional, Union
 except ImportError:
-    from backports.typing import Any, Callable, Dict, List, Optional, Set, Union  # type: ignore  # noqa: F401
-from urllib.parse import quote_plus
-from queue import Queue, Empty
+    from backports.typing import Any, Callable, Dict, List, Optional, Union  # type: ignore  # noqa: F401
 
 import requests
 
 from dulwich import client, porcelain
-from dulwich.repo import Repo
 from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
 
 from PyQt5.QtCore import QStringListModel, QLocale, QTranslator, Qt
@@ -122,67 +118,61 @@ class AppFile:
         """Return the absolute current path."""
         return os.path.dirname(os.path.abspath(__file__))
 
+client.get_ssh_vendor = ParamikoSSHVendor
 
+from pext.appfile import AppFile  # noqa: E402
 # Ensure pext_base and pext_helpers can always be loaded by us and the modules
 sys.path.append(os.path.join(AppFile.get_path(), "helpers"))
 sys.path.append(os.path.join(AppFile.get_path()))
 
 from pext_base import ModuleBase  # noqa: E402
-from pext_helpers import Action, SelectionType  # noqa: E402
-
-from constants import USE_INTERNAL_UPDATER  # noqa: E402
+from pext_helpers import Action, Selection  # noqa: E402
 
 
-class MinimizeMode(IntEnum):
-    """A list of possible ways Pext can react on minimization."""
+class Core():
+    """Core-related functionality."""
 
-    Normal = 0
-    Tray = 1
-    NormalManualOnly = 2
-    TrayManualOnly = 3
+    __active_modules = []  # type: List[UiModule]
+    __focused_module = -1
 
+    @staticmethod
+    def add_module(module: UiModule, index=None) -> int:
+        """Add a module to the list of active modules."""
+        if index is not None:
+            Core.__active_modules.insert(index, module)
+            return index
 
-class SortMode(IntEnum):
-    """A list of possible ways Pext can sort module entries."""
+        Core.__active_modules.append(module)
+        return len(Core.__active_modules) - 1
 
-    Module = 0
-    Ascending = 1
-    Descending = 2
+    @staticmethod
+    def remove_module(index: int) -> None:
+        """Remove a module from the list of active modules."""
+        del Core.__active_modules[index]
 
-
-class OutputMode(IntEnum):
-    """A list of possible locations to output to."""
-
-    DefaultClipboard = 0
-    SelectionClipboard = 1
-    FindBuffer = 2
-    AutoType = 3
-
-
-class OutputSeparator(IntEnum):
-    """A list of possible separators to put between entries in the output queue."""
-
-    None_ = 0
-    Tab = 1
-    Enter = 2
-
+    @staticmethod
+    def get_module(index: int) -> UiModule:
+        """Get a module by index."""
+        return Core.__active_modules[index]
 
 class ConfigRetriever:
     """Retrieve global configuration entries."""
 
-    __config_data_path = None
-    __config_temp_path = None
+    @staticmethod
+    def get_focused_module_id() -> int:
+        """Get the id (index) of the focused module."""
+        return Core.__focused_module
 
     @staticmethod
-    def set_data_path(path: Optional[str]) -> None:
-        """Set the root configuration directory for Pext to store in and load from."""
-        ConfigRetriever.__config_data_path = path
+    def set_focused_module_id(index: int) -> None:
+        """Set the id (index) of the focused module."""
+        Core.__focused_module = index
 
     @staticmethod
-    def make_portable(portable: Optional[bool]) -> None:
-        """Make changes to locations so that Pext can be considered portable."""
-        if not portable:
-            return
+    def restart(extra_args=None):
+        """Restart Pext, possibly with extra arguments."""
+        # Call _shut_down manually because it isn't called when using os.execv
+        Core._shut_down()
 
         if not ConfigRetriever.__config_data_path:
             if "APPIMAGE" in os.environ:
@@ -214,16 +204,14 @@ class ConfigRetriever:
         os.makedirs(config_data_path, exist_ok=True)
         return os.path.join(config_data_path, "pext")
 
-    @staticmethod
-    def get_temp_path() -> str:
-        """Get the temp path."""
-        if ConfigRetriever.__config_temp_path:
-            temp_path = os.path.expanduser(ConfigRetriever.__config_temp_path)
-        else:
-            temp_path = tempfile.gettempdir()
+        for module in modules:
+            try:
+                module.vm.stop()
+            except Exception as e:
+                print("Failed to cleanly stop module {}: {}".format(module.metadata['name'], e))
+                traceback.print_exc()
 
-        os.makedirs(temp_path, exist_ok=True)
-        return temp_path
+        ProfileManager.unlock_profile(profile)
 
 
 class RunConseq:
@@ -245,8 +233,7 @@ class Logger:
     as a desktop notification.
     """
 
-    queued_messages = []  # type: List[Dict[str, str]]
-    last_update = None  # type: Optional[float]
+    queue = Queue()  # type: Queue
 
     window = None
     status_text = None  # type: QObject
@@ -277,9 +264,11 @@ class Logger:
                 else:
                     message = line
 
-                message_lines.append(message)
+        if module_manager is not None:
+            InternalCallProcessor.module_manager = module_manager
 
-        return message_lines
+        if theme_manager is not None:
+            InternalCallProcessor.theme_manager = theme_manager
 
     @staticmethod
     def log(module_name: Optional[str], message: str) -> None:
@@ -293,11 +282,12 @@ class Logger:
             print(message)
 
     @staticmethod
-    def log_error(module_name: Optional[str], message: str) -> None:
-        """If a logger is provided, log to the logger. Otherwise, print."""
-        if Logger.window:
-            if not module_name:
-                module_name = ""
+    def process() -> None:
+        """Process an internal call."""
+        try:
+            call = InternalCallProcessor.queue.get_nowait()
+        except Empty:
+            return
 
             Logger._queue_message(module_name, message, "error")
         else:
@@ -349,24 +339,32 @@ class Logger:
         print("{}\n{}\n{}".format(module_name if module_name else "Pext",
                                   message, detailed_message))
 
-    @staticmethod
-    def show_next_message() -> None:
-        """Show next statusbar message.
+        print("{}\n{}\n{}".format(module_name if module_name else "Pext",
+                                  message, detailed_message))
 
-        Display the next message. If no more messages are available, clear the
-        status bar after it has been displayed for 5 seconds.
-        """
-        if not Logger.window:
-            return
+        functions = [
+            {
+                'name': InternalCallProcessor.module_manager.update,
+                'args': (arguments[0], True,),
+                'kwargs': {}
+            }
+        ]
 
-        current_time = time.time()
+        for index, module in enumerate(Core.get_modules()):
+            if module.metadata['id'] == arguments[0]:
+                module_data = InternalCallProcessor.module_manager.reload_step_unload(
+                    index,
+                    InternalCallProcessor.window
+                )
+                InternalCallProcessor.temp_module_datas.append(module_data)
+                functions.append({
+                    'name': InternalCallProcessor.enqueue,
+                    'args': ("pext:finalize-module:{}:{}".format(
+                        index, len(InternalCallProcessor.temp_module_datas) - 1),),
+                    'kwargs': {}
+                })
 
-        if len(Logger.queued_messages) == 0:
-            if not Logger.last_update or current_time - 5 > Logger.last_update:
-                QQmlProperty.write(Logger.status_text, "text", "")
-                Logger.last_update = None
-        else:
-            message = Logger.queued_messages.pop(0)
+        threading.Thread(target=RunConseq, args=(functions,)).start()  # type: ignore
 
             if message["type"] == "error":
                 statusbar_message = "<font color='red'>⚠ {}</color>".format(
@@ -376,13 +374,13 @@ class Logger:
                 statusbar_message = message["message"]
                 icon = QSystemTrayIcon.Information
 
-            QQmlProperty.write(Logger.status_text, "text", statusbar_message)
+        InternalCallProcessor.window.open_load_tab()
 
             if Logger.window.tray:
                 Logger.window.tray.tray.showMessage("Pext", message["message"],
                                                     icon)
 
-            Logger.last_update = current_time
+        InternalCallProcessor.theme_manager.update(arguments[0], True)
 
 
 class PextFileSystemEventHandler(FileSystemEventHandler):
@@ -446,23 +444,30 @@ class MainLoop:
                  main_loop_queue: Queue) -> None:
         """Initialize the main loop."""
         self.app = app
-        self.window = window
         self.main_loop_queue = main_loop_queue
+        self.module_manager = module_manager
+        self.window = window
 
     def _process_tab_action(self, tab: Dict, active_tab: int) -> None:
         action = tab["queue"].get_nowait()
 
         if action[0] == Action.critical_error:
+            # Stop the module
+            self.module_manager.stop(index)
+
+            # Disable with reason: crash
+            self.window.disable_module(index, 1)
+
+            if len(action) > 2:
+                self.window.update_state(index, action[2])
+
+            # Log critical error
             Logger.log_critical(
                 tab["metadata"]["name"],
                 str(action[1]),
                 str(action[2]) if len(action) > 2 else None,
                 tab["metadata"],
             )
-
-            tab_id = self.window.tab_bindings.index(tab)
-            self.window.module_manager.unload(self.window, tab_id)
-
         elif action[0] == Action.add_message:
             Logger.log(tab["metadata"]["name"], str(action[1]))
 
@@ -746,7 +751,7 @@ class MainLoop:
             if not tab["vm"].minimize_disabled:
                 self.window.close()
 
-                selection = []  # type: List[Dict[SelectionType, str]]
+                selection = []  # type: List[Selection]
             else:
                 selection = tab["vm"].selection[:-1]
 
@@ -850,13 +855,17 @@ class MainLoop:
         """Process actions modules put in the queue and keep the window working."""
         while True:
             try:
-                main_loop_request = self.main_loop_queue.get_nowait()
+                # Ever going above 30FPS is just a waste of CPU
+                main_loop_request = self.main_loop_queue.get(True, (1 / 30))
                 main_loop_request()
             except Empty:
                 pass
 
+            # Process a call if there is any to process
+            InternalCallProcessor.process()
+
             self.app.sendPostedEvents()
-            self.app.processEvents()
+            self.app.processEvents()  # type: ignore
             Logger.show_next_message()
 
             current_tab = QQmlProperty.read(self.window.tabs, "currentIndex")
@@ -876,7 +885,7 @@ class MainLoop:
                         else False,
                     )
                 else:
-                    active_tab = False
+                    focused_module = False
 
                 try:
                     self._process_tab_action(tab, active_tab)
@@ -892,12 +901,6 @@ class MainLoop:
                         tab["metadata"]["name"], e))
                     traceback.print_exc()
 
-            if all_empty:
-                if self.window.window.isVisible():
-                    time.sleep(0.01)
-                else:
-                    time.sleep(0.1)
-
 
 class LocaleManager:
     """Load and switch locales."""
@@ -910,13 +913,13 @@ class LocaleManager:
             QTranslator()
         )  # prevent Python from garbage collecting it after load_locale function
 
-    @staticmethod
-    def get_locales() -> Dict[str, str]:
-        """Return the list of supported locales.
+    def _pip_install(self, identifier: str) -> Optional[str]:
+        """Install module dependencies using pip."""
+        module_requirements_path = os.path.join(self.module_dir, identifier.replace('.', '_'), 'requirements.txt')
+        module_dependencies_path = os.path.join(self.module_dependencies_dir, identifier.replace('.', '_'))
 
-        It is return as a dictionary formatted as follows: {nativeLanguageName: languageCode}.
-        """
-        locales = {}
+        if not os.path.isfile(module_requirements_path):
+            return None
 
         try:
             for locale_file in os.listdir(
@@ -930,19 +933,35 @@ class LocaleManager:
         except FileNotFoundError:
             print("No translations found")
 
-        return locales
+        # Create the pip command
+        pip_command = [sys.executable,
+                       '-m',
+                       'pip',
+                       'install',
+                       '--isolated']
 
-    def get_current_locale(self, system_if_unset=True) -> Optional[QLocale]:
-        """Get the current locale.
+        # TODO: Remove after Debian 9 is no longer supported
+        # This works around Debian 9's faultily-patched pip
+        # We try to prevent false positives by checking for (mini)conda or a venv
+        # This is tracked upstream at https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=830892
+        # It has been fixed in Debian Buster (10)
+        if ("conda" not in sys.version and os.path.isfile('/etc/issue.net') and
+                re.match(r"Debian GNU/Linux \d$", open('/etc/issue.net', 'r').read()) and
+                not hasattr(sys, 'real_prefix') and
+                not (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix)):
+            pip_command += ['--system']
 
-        If no locale is explicitly set, it will return the current system locale, unless system_if_unset is set to
-        False, in which case it will return None.
-        """
-        if self.current_locale:
-            return self.current_locale
+        pip_command += ['--upgrade',
+                        '--target',
+                        module_dependencies_path,
+                        '-r',
+                        module_requirements_path]
 
-        if system_if_unset:
-            return QLocale()
+        # Actually run the pip command
+        try:
+            check_output(pip_command, universal_newlines=True)
+        except CalledProcessError as e:
+            return e.output
 
         return None
 
@@ -1009,37 +1028,47 @@ class ProfileManager:
         pid = str(os.getpid())
         open(pidfile, "w").write(pid)
 
-    @staticmethod
-    def get_lock_instance(profile: str) -> Optional[int]:
-        """Get the pid of the current process having a lock, if any."""
-        pidfile = ProfileManager._get_pid_path(profile)
-        if not os.path.isfile(pidfile):
-            return None
+        # Append module dependencies path if not yet appended
+        module_dependencies_path = os.path.join(ConfigRetriever.get_path(),
+                                                'module_dependencies',
+                                                module['metadata']['id'].replace('.', '_'))
+        if module_dependencies_path not in sys.path:
+            sys.path.append(module_dependencies_path)
 
         pid = int(open(pidfile, "r").read())
 
-        if not psutil.pid_exists(pid):
-            return None
+        view_settings = {}
+        module_settings = {}
+        for setting in module['settings']:
+            value = module['settings'][setting]
+            if setting.startswith("__pext_"):
+                # Export settings relevant for ViewModel to ViewModel variable
+                if setting == '__pext_sort_mode':
+                    try:
+                        value = SortMode[value]
+                    except KeyError:
+                        pass
 
-        return pid
+                view_settings[setting] = value
+            else:
+                # Don't export internal Pext settings to module itself
+                module_settings[setting] = value
 
-    @staticmethod
-    def unlock_profile(profile: str) -> None:
-        """Remove the status of the profile currently being in use."""
-        pidfile = ProfileManager._get_pid_path(profile)
-        os.unlink(pidfile)
+        module['settings'] = module_settings
 
-    @staticmethod
-    def default_profile_name() -> str:
-        """Return the default profile name."""
-        return "default"
+        # Prepare ViewModel
+        vm = ViewModel(view_settings)
 
-    def create_profile(self, profile: str) -> bool:
-        """Create a new empty profile if name not in use already."""
+        # Prepare module
         try:
-            os.mkdir(os.path.join(self.profile_dir, profile))
-        except OSError:
-            return False
+            module_import = __import__(module['metadata']['id'].replace('.', '_'), fromlist=['Module'])
+        except (ImportError, NameError) as e1:
+            Logger.log_critical(
+                module['metadata']['name'],
+                str(e1),
+                traceback.format_exc(),
+                module['metadata']
+            )
 
         return True
 
@@ -3561,9 +3590,15 @@ class Window:
     def _menu_toggle_tray_icon(self, enabled: bool) -> None:
         Settings.set("tray", enabled)
         try:
-            self.tray.show() if enabled else self.tray.hide()  # type: ignore
-        except AttributeError:
-            pass
+            porcelain.clone(
+                UpdateManager.fix_git_url_for_dulwich(url), target=module_path, checkout=branch
+            )
+        except Exception as e:
+            if verbose:
+                Logger.log_critical(
+                    None,
+                    Translation.get("failed_to_download").format(name, e),
+                    traceback.format_exc())
 
     def _menu_install_quick_action_service(self) -> None:
         new_path = os.path.join(ConfigRetriever.get_temp_path(),
@@ -3620,17 +3655,11 @@ class Window:
             except TypeError:
                 pass
 
-    def _tab_complete(self) -> None:
-        element = self._get_current_element()
-        if element:
             try:
                 element["vm"].tab_complete()
             except TypeError:
                 pass
 
-    def _input_args(self) -> None:
-        element = self._get_current_element()
-        if element:
             try:
                 element["vm"].input_args()
             except TypeError:
@@ -3650,9 +3679,8 @@ class Window:
         profiles = self.profile_manager.list_profiles()
         self.context.setContextProperty("profiles", profiles)
 
-    def _menu_check_updates_actually_check(self, verbose=True) -> None:
         if verbose:
-            Logger.log(None, Translation.get("checking_for_pext_updates"))
+            Logger.log(None, Translation.get("installed").format(name))
 
         try:
             new_version = UpdateManager().check_core_update()
@@ -3662,7 +3690,10 @@ class Window:
                 Translation.get("failed_to_check_for_pext_updates").format(e))
             traceback.print_exc()
 
-            return
+    def uninstall(self, identifier: str, verbose=False) -> bool:
+        """Uninstall a module."""
+        module_path = os.path.join(self.module_dir, identifier.replace('.', '_'))
+        dep_path = os.path.join(self.module_dependencies_dir, identifier.replace('.', '_'))
 
         if new_version:
             self.add_actionable(
@@ -3787,9 +3818,11 @@ class Window:
         if self.app.platformName() in ["webgl", "vnc"]:
             return
 
-        if force_tray:
-            if self.tray:
-                self.tray.show()
+        try:
+            with open(os.path.join(module_path, "metadata.json"), 'r') as metadata_json:
+                name = json.load(metadata_json)['name']
+        except (FileNotFoundError, IndexError, json.decoder.JSONDecodeError):
+            name = identifier
 
             self.window.hide()
         else:
@@ -3807,7 +3840,10 @@ class Window:
             else:
                 self.window.hide()
 
-        self._macos_focus_workaround()
+        try:
+            if not UpdateManager.update(module_path):
+                if verbose:
+                    Logger.log(None, Translation.get("already_up_to_date").format(name), show_in_module=identifier)
 
         if self.output_queue:
             output_mode = Settings.get("output_mode")
@@ -3865,9 +3901,15 @@ class Window:
                 self.app.clipboard().setText(
                     str(join_string.join(self.output_queue)), mode)
 
-                Logger.log(None, Translation.get("data_copied_to_clipboard"))
+        pip_error_output = self._pip_install(identifier)
+        if pip_error_output is not None:
+            if verbose:
+                Logger.log_critical(
+                    None,
+                    Translation.get("failed_to_update_dependencies").format(name),
+                    pip_error_output)
 
-                self.output_queue = []
+            return False
 
     def show(self) -> None:
         """Show the window."""
@@ -3877,16 +3919,15 @@ class Window:
             else:
                 self.tray.hide()
 
-        if self.window.windowState() == Qt.WindowMinimized:
-            self.window.showNormal()
-        else:
-            self.window.show()
+        return True
 
-        self.window.raise_()
+    def update_all(self, verbose=False) -> bool:
+        """Update all modules."""
+        success = True
 
-    def switch_tab(self, tab_id) -> None:
-        """Switch the active tab."""
-        QQmlProperty.write(self.tabs, "currentIndex", tab_id)
+        for identifier in self.list().keys():
+            if not self.update(identifier, verbose=verbose):
+                success = False
 
     def toggle_visibility(self, force_tray=False) -> None:
         """Toggle window visibility."""
@@ -3906,17 +3947,23 @@ class Window:
         )
         sys.exit(0)
 
+class ModuleThreadInitializer(threading.Thread):
+    """Initialize a thread for the module."""
 
 class SignalHandler:
     """Handle UNIX signals."""
 
-    def __init__(self, window: Window) -> None:
-        """Initialize SignalHandler."""
-        self.window = window
+    def run(self) -> None:
+        """Start the module's thread.
 
-    def handle(self, signum: int, frame) -> None:
-        """When an UNIX signal gets received, show the window."""
-        self.window.show()
+        The thread will run forever, until an exception is thrown. If an
+        exception is thrown, an Action.critical_error is appended to the
+        queue.
+        """
+        try:
+            threading.Thread.run(self)
+        except Exception as e:
+            self.queue.put([Action.critical_error, str(e), traceback.format_exc()])
 
 
 class ThemeManager:
@@ -4886,37 +4933,49 @@ def main() -> None:
         if platform.system() == "Windows" and Settings.get("style") is None:
             app.setStyle(QStyleFactory().create("Fusion"))
 
-        theme_manager = ThemeManager()
         theme = theme_manager.load(theme_identifier)
         theme_manager.apply(theme, app)
 
+    # Prepare UI-specific
+    if ui_type == UIType.Qt5:
+        from pext.ui_qt5 import Window, Tray, HotkeyHandler, SignalHandler
+    else:
+        raise ValueError("Invalid UI type requested")
+
     # Get a window
-    window = Window(app, locale_manager)
+    window = Window(app, locale_manager, module_manager, theme_manager)
+
+    # Prepare InternalCallProcessor
+    InternalCallProcessor.bind(window, module_manager, theme_manager)
 
     # Give the logger a reference to the window
     Logger.bind_window(window)
 
-    # Clean up on exit
-    atexit.register(_shut_down, window)
+    if ui_type == UIType.Qt5:
+        # Create a tray icon
+        # This needs to be stored in a variable to prevent the Python garbage collector from removing the Qt tray
+        tray = Tray(window, app_icon)  # noqa: F841
 
     # Handle SIGUSR1 UNIX signal
     signal_handler = SignalHandler(window)
     if not platform.system() == "Windows":
         signal.signal(signal.SIGUSR1, signal_handler.handle)
 
-    # Start handling the global hotkey
-    needs_main_loop_queue = Queue()  # type: Queue[Callable[[], None]]
-    HotkeyHandler(needs_main_loop_queue, window)
+    # Clean up on exit
+    atexit.register(Core._shut_down)
 
     # Create a main loop
-    main_loop = MainLoop(app, window, needs_main_loop_queue)
+    main_loop_queue = Queue()  # type: Queue[Callable[[], None]]
+    main_loop = MainLoop(app, main_loop_queue, module_manager, window)
 
-    # Create a tray icon
-    # This needs to be stored in a variable to prevent the Python garbage collector from removing the Qt tray
-    tray = Tray(window, app_icon)  # noqa: F841
+    if ui_type == UIType.Qt5:
+        # Handle SIGUSR1 UNIX signal
+        signal_handler = SignalHandler(window)
+        if not platform.system() == 'Windows':
+            signal.signal(signal.SIGUSR1, signal_handler.handle)
 
-    # Give the window a reference to the tray
-    window.bind_tray(tray)
+        # Start handling the global hotkey
+        HotkeyHandler(main_loop_queue, window)
 
     # Start watching for uninstalls
     event_handler = PextFileSystemEventHandler(
@@ -4936,5 +4995,10 @@ def main() -> None:
     main_loop.run()
 
 
+def run_qt5() -> None:
+    """Entrypoint for starting with Qt5 UI."""
+    main(UIType.Qt5)
+
+
 if __name__ == "__main__":
-    main()
+    main(UIType.Qt5)

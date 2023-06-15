@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<TS version="2.1" language="lt">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../qml/AboutDialog.qml" line="25"/>
         <source>About Pext</source>
-        <translation>À propos de Pext</translation>
+        <translation>Apie Pext</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="58"/>
         <source>Copyright</source>
-        <translation></translation>
+        <translation>Autorių teisės</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="90"/>
         <source>Translators</source>
-        <translation>Traducteurs</translation>
+        <translation>Vertėjai</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="101"/>
         <source>Want to help translate Pext? Please click here.</source>
-        <translation>Voulez-vous aider à traduire Pext ? Cliquez ici s&apos;il vous plaît.</translation>
+        <translation>Norite padėti išversti Pext? Spauskite čia.</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="102"/>
         <source>The Pext team would like to thank the following users for translating Pext:</source>
-        <translation>L&apos;équipe Pext aimerait remercier les utilisateurs suivants pour la traduction de Pext :</translation>
+        <translation>Pext komanda norėtų padėkoti šiems vartotojams už Pext vertimą:</translation>
     </message>
 </context>
 <context>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../qml/ChoiceDialog.qml" line="26"/>
         <source>Pext - %1</source>
-        <translation>Pext - %1</translation>
+        <translation>Pext – %1</translation>
     </message>
 </context>
 <context>
@@ -47,12 +47,12 @@
     <message>
         <location filename="../qml/CommandArgsDialog.qml" line="26"/>
         <source>Arguments for %1</source>
-        <translation>Arguments pour %1</translation>
+        <translation>%1 argumentai</translation>
     </message>
     <message>
         <location filename="../qml/CommandArgsDialog.qml" line="34"/>
         <source>Enter arguments for %1</source>
-        <translation>Entrer des arguments pour %1</translation>
+        <translation>Įveskite %1 argumentus</translation>
     </message>
 </context>
 <context>
@@ -69,11 +69,11 @@
 This will stop any running module.
 
 Are you sure you want to quit?</source>
-        <translation>Vous êtes sur le point de quitter Pext.
+        <translation>Jūs ketinate išeiti iš Pext.
 
-Ceci arrêtera tout module en cours d&apos;exécution.
+Tai sustabdys bet kurį veikiantį modulį.
 
-Êtes-vous sûr(e) de vouloir quitter&#xa0;?</translation>
+Ar tikrai norite baigti?</translation>
     </message>
     <message>
         <location filename="../qml/ConfirmQuitDialog.qml" line="31"/>
@@ -82,11 +82,11 @@ Ceci arrêtera tout module en cours d&apos;exécution.
 This will stop any running module and the global hotkey will not work until you restart Pext manually.
 
 Are you sure you want to quit?</source>
-        <translation>Vous êtes sur le point de quitter Pext.
+        <translation>Jūs ketinate išeiti iš Pext.
 
-Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier global ne fonctionnera pas tant que vous n&apos;aurez pas redémarré Pext manuellement.
+Tai sustabdys bet kurį veikiantį modulį ir visuotinis spartusis klavišas neveiks, kol iš naujo nepaleisite Pext rankiniu būdu.
 
-Êtes-vous sûr(e) de vouloir quitter ?</translation>
+Ar tikrai norite baigti darbą?</translation>
     </message>
 </context>
 <context>
@@ -99,7 +99,7 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/CriticalErrorDialog.qml" line="24"/>
         <source>Pext - %1</source>
-        <translation>Pext - %1</translation>
+        <translation>Pext – %1</translation>
     </message>
 </context>
 <context>
@@ -112,7 +112,7 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InputRequestDialog.qml" line="26"/>
         <source>Pext - %1</source>
-        <translation>Pext - %1</translation>
+        <translation>Pext – %1</translation>
     </message>
 </context>
 <context>
@@ -120,87 +120,87 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="26"/>
         <source>Module Installation</source>
-        <translation>Installation de Modules</translation>
+        <translation>Modulio diegimas</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="26"/>
         <source>Theme Installation</source>
-        <translation>Installation de Thèmes</translation>
+        <translation>Temos diegimas</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="46"/>
         <source>Module source:</source>
-        <translation>Source du module :</translation>
+        <translation>Modulio šaltinis:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="46"/>
         <source>Theme source:</source>
-        <translation>Source du Thème :</translation>
+        <translation>Temos šaltinis:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="63"/>
         <source>No modules available from this source.</source>
-        <translation>Aucun module disponible à partir de cette source.</translation>
+        <translation>Modulių iš šio šaltinio nėra.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="63"/>
         <source>No themes available from this source.</source>
-        <translation>Aucun thème disponible à partir de cette source.</translation>
+        <translation>Temų iš šio šaltinio nėra.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="71"/>
         <source>Unsupported repository format (expected version %1, not %2).</source>
-        <translation>Format de référentiel non pris en charge (version attendue %1, pas %2).</translation>
+        <translation>Nepalaikomas saugyklos formatas (tikėtasi versijos %1, o ne %2).</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="79"/>
         <source>Module:</source>
-        <translation>Module :</translation>
+        <translation>Modulis:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="93"/>
         <source>Download source:</source>
-        <translation>Source de téléchargement :</translation>
+        <translation>Atsisiuntimo šaltinis:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="107"/>
         <source>This module is already installed.</source>
-        <translation>Ce module est déjà installé.</translation>
+        <translation>Šis modulis jau įdiegtas.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="107"/>
         <source>This theme is already installed.</source>
-        <translation>Ce thème est déjà installé.</translation>
+        <translation>Ši tema jau įdiegta.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="115"/>
         <source>This module does not seem to support %1.</source>
-        <translation>Ce module ne semble pas prendre en charge %1.</translation>
+        <translation>Atrodo, kad šis modulis nepalaiko %1.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="123"/>
         <source>Details:</source>
-        <translation>Détails :</translation>
+        <translation>Išsamesnė informacija:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="131"/>
         <source>Creator: </source>
-        <translation>Créateur(trice) : </translation>
+        <translation>Kūrėjas: </translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="138"/>
         <source>Description: </source>
-        <translation>Description : </translation>
+        <translation>Aprašymas: </translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="145"/>
         <source>License: </source>
-        <translation>Licence : </translation>
+        <translation>Licencija: </translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="152"/>
         <source>Only install modules from people you trust.</source>
-        <translation>Installer uniquement les modules des personnes de confiance.</translation>
+        <translation>Įdiekite modulius tik iš žmonių, kuriais pasitikite.</translation>
     </message>
 </context>
 <context>
@@ -208,12 +208,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallModuleFromRepositoryNoModulesAvailableDialog.qml" line="24"/>
         <source>No modules found</source>
-        <translation>Aucun module trouvé</translation>
+        <translation>Nerasta jokių modulių</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositoryNoModulesAvailableDialog.qml" line="27"/>
         <source>No modules were found in this repository.</source>
-        <translation>Aucun module n&apos;a été trouvé dans ce référentiel.</translation>
+        <translation>Šioje saugykloje nerasta jokių modulių.</translation>
     </message>
 </context>
 <context>
@@ -221,52 +221,52 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="26"/>
         <source>Module installation</source>
-        <translation>Installation du module</translation>
+        <translation>Modulio diegimas</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="35"/>
         <source>Choose the module to install:</source>
-        <translation>Choisissez le module à installer :</translation>
+        <translation>Pasirinkite modulį, kurį norite įdiegti:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="45"/>
         <source>Choose the preferred download source:</source>
-        <translation>Choisissez la source de téléchargement préférée :</translation>
+        <translation>Pasirinkite pageidaujamą atsisiuntimo šaltinį:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="55"/>
         <source>You already have this module installed.</source>
-        <translation>Vous avez déjà installé ce module.</translation>
+        <translation>Jūs jau esate įdiegę šį modulį.</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="61"/>
         <source>This module does not seem to support %1.</source>
-        <translation>Ce module ne semble pas supporter %1.</translation>
+        <translation>Atrodo, kad šis modulis nepalaiko %1.</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="67"/>
         <source>Module information:</source>
-        <translation>Information du module :</translation>
+        <translation>Modulio informacija:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="71"/>
         <source>Developer: </source>
-        <translation>Développeur : </translation>
+        <translation>Kūrėjas: </translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="75"/>
         <source>Description: </source>
-        <translation>Description : </translation>
+        <translation>Aprašymas: </translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="79"/>
         <source>License: </source>
-        <translation>Licence : </translation>
+        <translation>Licencija: </translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="83"/>
         <source>As Pext modules are code, please make sure you trust the developer before continuing.</source>
-        <translation>Comme les modules Pext sont du code, assurez-vous de faire confiance au développeur avant de continuer.</translation>
+        <translation>Kadangi Pext moduliai yra kodas, prieš tęsdami įsitikinkite, kad pasitikite kūrėju.</translation>
     </message>
 </context>
 <context>
@@ -274,17 +274,17 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallModuleFromURLDialog.qml" line="26"/>
         <source>Module installation</source>
-        <translation>Installation du module</translation>
+        <translation>Modulio diegimas</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromURLDialog.qml" line="33"/>
         <source>Enter the metadata URL of the module to install:</source>
-        <translation>Entrez l&apos;URL méta data du module pour l&apos;installer :</translation>
+        <translation>Įveskite diegiamo modulio metaduomenų URL:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromURLDialog.qml" line="42"/>
         <source>Only install modules from people you trust.</source>
-        <translation>Installer uniquement les modules des personnes de confiance.</translation>
+        <translation>Įdiekite modulius tik iš žmonių, kuriais pasitikite.</translation>
     </message>
 </context>
 <context>
@@ -292,12 +292,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallThemeFromURLDialog.qml" line="26"/>
         <source>Theme installation</source>
-        <translation>Installation de thème</translation>
+        <translation>Temos diegimas</translation>
     </message>
     <message>
         <location filename="../qml/InstallThemeFromURLDialog.qml" line="33"/>
         <source>Enter the metadata URL of the theme to install:</source>
-        <translation>Entrez l&apos;URL méta data du thème pour l&apos;installer :</translation>
+        <translation>Įveskite temos, kurią norite įdiegti, metaduomenų URL:</translation>
     </message>
 </context>
 <context>
@@ -305,17 +305,17 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/LoadModuleDialog.qml" line="26"/>
         <source>Load module</source>
-        <translation>Charger le module</translation>
+        <translation>Įkelti modulį</translation>
     </message>
     <message>
         <location filename="../qml/LoadModuleDialog.qml" line="44"/>
         <source>Choose the module to load:</source>
-        <translation>Choisissez le module à charger :</translation>
+        <translation>Pasirinkite modulį, kurį norite įkelti:</translation>
     </message>
     <message>
         <location filename="../qml/LoadModuleDialog.qml" line="99"/>
         <source>Get more modules</source>
-        <translation>Obtenir plus de modules</translation>
+        <translation>Gaukite daugiau modulių</translation>
     </message>
 </context>
 <context>
@@ -323,22 +323,22 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="26"/>
         <source>Load profile</source>
-        <translation>Charger le profil</translation>
+        <translation>Įkelti profilį</translation>
     </message>
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="40"/>
         <source>Choose the profile to switch to:</source>
-        <translation>Choisissez le profil à utiliser pour :</translation>
+        <translation>Pasirinkite profilį, į kurį norite perjungti:</translation>
     </message>
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="51"/>
         <source>Open in a new window</source>
-        <translation>Ouvrir une nouvelle fenêtre</translation>
+        <translation>Atidaryti naujame lange</translation>
     </message>
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="56"/>
         <source>Note: Pext will restart to switch profile.</source>
-        <translation>Remarque : Pext redémarrera pour changer de profil.</translation>
+        <translation>Pastaba: Pext bus paleista iš naujo, kad perjungtų profilį.</translation>
     </message>
 </context>
 <context>
@@ -346,27 +346,27 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="26"/>
         <source>Switch theme</source>
-        <translation>Changer de thème</translation>
+        <translation>Perjungti temą</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="42"/>
         <source>Choose the theme to switch to:</source>
-        <translation>Choisissez le thème vers lequel basculer :</translation>
+        <translation>Pasirinkite temą, į kurį norite perjungti:</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="47"/>
         <source>No theme</source>
-        <translation>Pas de thème</translation>
+        <translation>Nėra temos</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="52"/>
         <source>Note: Pext will restart to apply the new theme.</source>
-        <translation>Remarque : Pext redémarrera pour appliquer le nouveau thème.</translation>
+        <translation>Pastaba: Pext bus paleista iš naujo, kad būtų galima taikyti naują temą.</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="56"/>
         <source>Get more themes</source>
-        <translation>Obtenir plus de thèmes</translation>
+        <translation>Gaukite daugiau temų</translation>
     </message>
 </context>
 <context>
@@ -374,57 +374,57 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/ManageDialog.qml" line="26"/>
         <source>Manage modules</source>
-        <translation>Gérer les modules</translation>
+        <translation>Tvarkyti modulius</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="26"/>
         <source>Manage themes</source>
-        <translation>Gérer les thèmes</translation>
+        <translation>Tvarkyti temas</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="61"/>
         <source>Identifier: %1</source>
-        <translation>Identifiant : %1</translation>
+        <translation>Identifikatorius: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="69"/>
         <source>Version: %1 (%2)</source>
-        <translation>Version : %1 (%2)</translation>
+        <translation>Versija: %1 (%2)</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="77"/>
         <source>Developer: %1</source>
-        <translation>Développeur : %1</translation>
+        <translation>Kūrėjas: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="85"/>
         <source>Description: %1</source>
-        <translation>Description : %1</translation>
+        <translation>Aprašymas: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="93"/>
         <source>License: %1</source>
-        <translation>Licence : %1</translation>
+        <translation>Licencija: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="101"/>
         <source>Homepage: %1</source>
-        <translation>Page d&apos;accueil : %1</translation>
+        <translation>Pagrindinis puslapis: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="118"/>
         <source>Download source: %1</source>
-        <translation>Source de téléchargement : %1</translation>
+        <translation>Atsisiuntimo šaltinis: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="136"/>
         <source>Update</source>
-        <translation>Mise à jour</translation>
+        <translation>Atnaujinti</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="146"/>
         <source>Uninstall</source>
-        <translation>Désinstaller</translation>
+        <translation>Pašalinti</translation>
     </message>
 </context>
 <context>
@@ -432,27 +432,27 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="26"/>
         <source>Manage profiles</source>
-        <translation>Gérer les profils</translation>
+        <translation>Tvarkyti profilius</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="44"/>
         <source>Enter profile name</source>
-        <translation>Entrez un nom de profil</translation>
+        <translation>Įveskite profilio vardą</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="48"/>
         <source>Create</source>
-        <translation>Créer</translation>
+        <translation>Sukurti</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="80"/>
         <source>Rename</source>
-        <translation>Renommer</translation>
+        <translation>Pervadinti</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="90"/>
         <source>Remove</source>
-        <translation>Retirer</translation>
+        <translation>Pašalinti</translation>
     </message>
 </context>
 <context>
@@ -460,17 +460,17 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/ModuleData.qml" line="213"/>
         <source>No results</source>
-        <translation>Aucun résultat</translation>
+        <translation>Nėra rezultatų</translation>
     </message>
     <message>
         <location filename="../qml/ModuleData.qml" line="412"/>
         <source>Module crashed.</source>
-        <translation>Le module a planté.</translation>
+        <translation>Modulis sutriko.</translation>
     </message>
     <message>
         <location filename="../qml/ModuleData.qml" line="415"/>
         <source>Updating module…</source>
-        <translation>Mise à jour du module…</translation>
+        <translation>Atnaujinamas modulis…</translation>
     </message>
 </context>
 <context>
@@ -478,12 +478,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/NoModulesInstalledDialog.qml" line="24"/>
         <source>No modules installed</source>
-        <translation>Pas de modules installé</translation>
+        <translation>Nėra įdiegtų modulių</translation>
     </message>
     <message>
         <location filename="../qml/NoModulesInstalledDialog.qml" line="27"/>
         <source>No modules installed, please install one first.</source>
-        <translation>Aucun module installé, veuillez en installer un en premier.</translation>
+        <translation>Nėra įdiegtų modulių, pirmiausia įdiekite vieną.</translation>
     </message>
 </context>
 <context>
@@ -491,12 +491,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/NoThemesInstalledDialog.qml" line="24"/>
         <source>No themes installed</source>
-        <translation>Pas de thèmes installé</translation>
+        <translation>Nėra įdiegtų temų</translation>
     </message>
     <message>
         <location filename="../qml/NoThemesInstalledDialog.qml" line="27"/>
         <source>No themes installed, please install one first.</source>
-        <translation>Aucun thème installé, veuillez en installer un en premier.</translation>
+        <translation>Nėra įdiegtų temų, pirmiausia įdiekite vieną.</translation>
     </message>
 </context>
 <context>
@@ -504,12 +504,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/OnlyOneProfileDialog.qml" line="24"/>
         <source>Only one profile available</source>
-        <translation>Un seul profil disponible</translation>
+        <translation>Yra tik vienas profilis</translation>
     </message>
     <message>
         <location filename="../qml/OnlyOneProfileDialog.qml" line="27"/>
         <source>There is only one profile available. Please create a second profile first.</source>
-        <translation>Il n&apos;y a qu&apos;un seul profil disponible. Veuillez d&apos;abord créer un second profil.</translation>
+        <translation>Yra tik vienas profilis. Pirmiausia sukurkite antrą profilį.</translation>
     </message>
 </context>
 <context>
@@ -522,7 +522,7 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/QuestionDialog.qml" line="24"/>
         <source>Pext - %1</source>
-        <translation>Pext - %1</translation>
+        <translation>Pext – %1</translation>
     </message>
 </context>
 <context>
@@ -530,12 +530,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/RenameProfileDialog.qml" line="26"/>
         <source>Rename profile</source>
-        <translation>Renommer le profil</translation>
+        <translation>Pervadinti profilį</translation>
     </message>
     <message>
         <location filename="../qml/RenameProfileDialog.qml" line="37"/>
         <source>Please choose a new name for this profile.</source>
-        <translation>Veuillez choisir un nouveau nom pour ce profil.</translation>
+        <translation>Pasirinkite naują šio profilio vardą.</translation>
     </message>
 </context>
 <context>
@@ -543,529 +543,529 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/main.qml" line="415"/>
         <source>Quit</source>
-        <translation>Quitter</translation>
+        <translation>Išeiti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="421"/>
         <source>&amp;Module</source>
-        <translation></translation>
+        <translation>&amp;Modulis</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="425"/>
         <source>Switch to next loaded module</source>
-        <translation>Passer au prochain module chargé</translation>
+        <translation>Perjungti į kitą įkeltą modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="433"/>
         <source>Switch to previous loaded module</source>
-        <translation>Passer au module chargé précédent</translation>
+        <translation>Perjungti į ankstesnį įkeltą modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="444"/>
         <source>Reload active module</source>
-        <translation>Recharger le module actif</translation>
+        <translation>Perkrauti aktyvųjį modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="452"/>
         <source>Close active module</source>
-        <translation>Fermer le module actif</translation>
+        <translation>Uždaryti aktyvųjį modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="465"/>
         <source>Load module</source>
-        <translation>Charger le module</translation>
+        <translation>Įkelti modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="509"/>
         <source>Install module</source>
-        <translation>Installer le module</translation>
+        <translation>Įdiegti modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="515"/>
         <source>From online module list</source>
-        <translation>De la liste des modules en ligne</translation>
+        <translation>Iš internetinio modulių sąrašo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="538"/>
         <location filename="../qml/main.qml" line="630"/>
         <source>From URL</source>
-        <translation>Depuis l&apos;URL</translation>
+        <translation>Iš URL</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="550"/>
         <source>&amp;Theme</source>
-        <translation></translation>
+        <translation>&amp;Tema</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="558"/>
         <source>Switch theme</source>
-        <translation>Changer de thème</translation>
+        <translation>Perjungti temą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="578"/>
         <source>Manage themes</source>
-        <translation>Gérer les thèmes</translation>
+        <translation>Tvarkyti temas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="601"/>
         <source>Install theme</source>
-        <translation>Installer un thème</translation>
+        <translation>Įdiegti temą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="607"/>
         <source>From online theme list</source>
-        <translation>De la liste des thèmes en ligne</translation>
+        <translation>Iš internetinio temų sąrašo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="646"/>
         <source>Switch profile</source>
-        <translation>Changer de profil</translation>
+        <translation>Perjungti profilį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="666"/>
         <source>Manage profiles</source>
-        <translation>Gérer les profils</translation>
+        <translation>Tvarkyti profilius</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="684"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Paramètres</translation>
+        <translation>&amp;Nustatymai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="688"/>
         <source>Turbo Mode</source>
-        <translation>Mode Turbo</translation>
+        <translation>Turbo režimas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="696"/>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation>Kalba</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="706"/>
         <source>System locale</source>
-        <translation>Paramètres régionaux du système</translation>
+        <translation>Sistemos lokalė</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="730"/>
         <source>Output style</source>
-        <translation>Format de sortie</translation>
+        <translation>Išvesties stilius</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="739"/>
         <source>Copy to default clipboard</source>
-        <translation>Copier dans le presse-papier défaut</translation>
+        <translation>Kopijuoti į numatytąją iškarpinę</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="747"/>
         <source>Copy to selection clipboard (X11)</source>
-        <translation>Copier dans le presse-papiers de sélection (X11)</translation>
+        <translation>Kopijuoti į pasirinkimo iškarpinę (X11)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="755"/>
         <source>Copy to find buffer (macOS)</source>
-        <translation>Copier pour trouver le tampon (macOS)</translation>
+        <translation>Kopijuoti į paieškos užkrovimą (macOS)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="762"/>
         <source>Type automatically</source>
-        <translation>Tapez automatiquement</translation>
+        <translation>Įvesti automatiškai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="768"/>
         <source>Separator between output queue entries</source>
-        <translation>Séparateur entre les entrées de file d&apos;attente de sortie</translation>
+        <translation>Išvesties eilės įrašų skyriklis</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="777"/>
         <source>Nothing</source>
-        <translation>Rien</translation>
+        <translation>Nieko</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="799"/>
         <source>Minimizing behaviour</source>
-        <translation>Minimiser la page</translation>
+        <translation>Sumažinimo elgsena</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="808"/>
         <source>Minimize normally</source>
-        <translation>Minimiser normalement</translation>
+        <translation>Sumažinti įprastai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="816"/>
         <source>Minimize to tray</source>
-        <translation>Réduire en tâche de fond</translation>
+        <translation>Sumažinti į programų dėklą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="823"/>
         <source>Manual only: Minimize normally</source>
-        <translation>Manuel seulement : réduire normalement</translation>
+        <translation>Tik rankiniu būdu: sumažinti įprastai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="831"/>
         <source>Manual only: Minimize to tray</source>
-        <translation>Manuel seulement : réduire en tâche de fond</translation>
+        <translation>Tik rankiniu būdu: sumažinti į programų dėklą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="850"/>
         <source>Automatically check for module and theme updates</source>
-        <translation>Rechercher automatiquement les mises à jour des modules et des thèmes</translation>
+        <translation>Automatiškai tikrinti, ar yra modulio ir temos naujinimų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="856"/>
         <source>Automatically install module and theme updates</source>
-        <translation>Installer automatiquement les mises à jour des modules et des thèmes</translation>
+        <translation>Automatiškai įdiegti modulių ir temų atnaujinimus</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="865"/>
         <source>Move Pext to the foreground when global hotkey is pressed (%1)</source>
-        <translation>Déplacer Pext an avant lorsque l&apos;utilisateur appuie sur la touche de raccourci globale (%1)</translation>
+        <translation>Perkelti Pext į pirmą planą, kai paspaudžiamas visuotinis spartusis klavišas (%1)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="877"/>
         <source>&amp;Help</source>
-        <translation>&amp;Aide</translation>
+        <translation>&amp;Pagalba</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="891"/>
         <source>Check for updates</source>
-        <translation>Vérifier les mises à jour</translation>
+        <translation>Tikrinti ar yra atnaujinimų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="897"/>
         <source>Install quick action service</source>
-        <translation>Installer un service d&apos;action rapide</translation>
+        <translation>Įdiegti greitojo veikimo paslaugą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1094"/>
         <source>Move Pext to the foreground</source>
-        <translation>Déplacer Pext au premier plan</translation>
+        <translation>Perkelti Pext į priekinį planą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1099"/>
         <source>Minimize</source>
-        <translation>Réduire</translation>
+        <translation>Sumažinti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1112"/>
         <source>Tabs</source>
-        <translation>Onglets</translation>
+        <translation>Skirtukai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1114"/>
         <source>Open a new tab</source>
-        <translation>Ouvrir un nouvel onglet</translation>
+        <translation>Atidaryti naują skirtuką</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1118"/>
         <source>Reload active tab</source>
-        <translation>Recharger l&apos;onglet actif</translation>
+        <translation>Perkrauti aktyvųjį skirtuką</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1122"/>
         <source>Close active tab</source>
-        <translation>Fermer l&apos;onglet actif</translation>
+        <translation>Uždaryti aktyvųjį skirtuką</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1126"/>
         <source>Switch to next tab</source>
-        <translation>Aller à l&apos;onglet suivant</translation>
+        <translation>Perjungti į sekantį skirtuką</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1130"/>
         <source>Switch to previous tab</source>
-        <translation>Aller à l&apos;onglet précédent</translation>
+        <translation>Perjungti į ankstesnį skirtuką</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1135"/>
         <source>Modules</source>
-        <translation>Modules</translation>
+        <translation>Moduliai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1107"/>
         <source>Complete input</source>
-        <translation>Saisie complète</translation>
+        <translation>Užbaigti įvestį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1103"/>
         <source>Go back to module&apos;s base level and minimize</source>
-        <translation>Revenir au niveau de base du module et minimiser</translation>
+        <translation>Grįžti į modulio pagrindinį lygį ir sumažinti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1137"/>
         <source>Go back</source>
-        <translation>Retour</translation>
+        <translation>Grįžti atgal</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1141"/>
         <source>Activate highlighted entry</source>
-        <translation>Activer l&apos;entrée en surbrillance</translation>
+        <translation>Aktyvinti paryškintą įrašą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1142"/>
         <source>Left mouse button</source>
-        <translation>Bouton gauche de la souris</translation>
+        <translation>Kairysis pelės klavišas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1145"/>
         <source>Activate highlighted entry (never minimize)</source>
-        <translation>Activer l&apos;entrée en surbrillance (ne jamais minimiser)</translation>
+        <translation>Aktyvinti paryškintą įrašą (niekada nesumažinti)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1146"/>
         <source>Middle mouse button</source>
-        <translation>Bouton central de la souris</translation>
+        <translation>Vidurinis pelės mygtukas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1149"/>
         <source>Enter arguments for highlighted command</source>
-        <translation>Entrez les arguments pour la commande en surbrillance</translation>
+        <translation>Įvesti paryškintos komandos argumentus</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1150"/>
         <location filename="../qml/main.qml" line="1154"/>
         <source>Right mouse button</source>
-        <translation>Bouton droit de la souris</translation>
+        <translation>Dešinysis pelės mygtukas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1153"/>
         <source>Open context menu</source>
-        <translation>Ouvrir le menu contextuel</translation>
+        <translation>Atidaryti kontekstinį meniu</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1157"/>
         <source>Change sorting style</source>
-        <translation>Changer le style de tri</translation>
+        <translation>Keisti rikiavimo stilių</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1235"/>
         <source>Sort: Module</source>
-        <translation>Trier&#xa0;: Module</translation>
+        <translation>Rikiuoti: pagal modulį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1237"/>
         <source>Sort: Ascending</source>
-        <translation>Trier par ordre croissant</translation>
+        <translation>Rikiuoti: didėjančia tvarka</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1239"/>
         <source>Sort: Descending</source>
-        <translation>Trier par ordre décroissant</translation>
+        <translation>Rikiuoti: mažėjančia tvarka</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1290"/>
         <source>Module&apos;s Module class does not implement ModuleBase</source>
-        <translation>La classe de module du module n&apos;implémente pas ModuleBase</translation>
+        <translation>Modulio klasė Modulis nerealizuoja ModuleBase</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1291"/>
         <source>Failed to load module {0}: {1} function has {2} parameters (excluding self), expected {3}</source>
-        <translation>Échec en retrouvez la module {0} : la {1} fonction contient {2} paramètres (en excluant ce paramètre), attendus {3}</translation>
+        <translation>Nepavyko įkelti modulio {0}: funkcija {1} turi {2} parametrus (išskyrus savąjį), tikėtasi {3}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1292"/>
         <source>{0} is already installed</source>
-        <translation>{0} est déjà installé</translation>
+        <translation>{0} jau yra įdiegtas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1293"/>
         <source>Downloading {0} from {1}</source>
-        <translation>Téléchargement de {0} à partir de {1}</translation>
+        <translation>Atsisiunčiamas {0} iš {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1294"/>
         <source>Failed to download {0}: {1}</source>
-        <translation>Échec du téléchargement de {0} : {1}</translation>
+        <translation>Nepavyko atsisiųsti {0}: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1295"/>
         <source>Downloading dependencies for {0}</source>
-        <translation>Téléchargement de dépendances pour {0}</translation>
+        <translation>Atsisiunčiamos {0} priklausančiosios</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1296"/>
         <source>Failed to download dependencies for {0}</source>
-        <translation>Échec du téléchargement des dépendances pour {0}</translation>
+        <translation>Nepavyko atsisiųsti {0} priklausančiųjų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1297"/>
         <source>Installed {0}</source>
-        <translation>Installée {0}</translation>
+        <translation>{0} įdiegta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1298"/>
         <source>Uninstalling {0}</source>
-        <translation>Désinstaller {0}</translation>
+        <translation>Šalinimas {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1299"/>
         <source>{0} is already uninstalled</source>
-        <translation>{0} est déjà désinstallé</translation>
+        <translation>{0} jau pašalinta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1300"/>
         <source>Uninstalled {0}</source>
-        <translation>Désinstaller {0}</translation>
+        <translation>{0} pašalinta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1301"/>
         <source>Updating {0}</source>
-        <translation>Mise à jour {0}</translation>
+        <translation>{0} atnaujinama</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1302"/>
         <source>{0} is already up to date</source>
-        <translation>{0} est déjà à jour</translation>
+        <translation>{0} jau atnaujinta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1303"/>
         <source>Failed to download update for {0}: {1}</source>
-        <translation>Impossible de télécharger la mise à jour pour {0} : {1}</translation>
+        <translation>Nepavyko atsisiųsti {0} atnaujinimo: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1304"/>
         <source>Updating dependencies for {0}</source>
-        <translation>Mise à jour des dépendances pour {0}</translation>
+        <translation>Atnaujinamos {0} priklausančiosios</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1305"/>
         <source>Failed to update dependencies for {0}</source>
-        <translation>Échec de la mise à jour des dépendances pour {0}</translation>
+        <translation>Nepavyko atnaujinti {0} priklausančiųjų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1306"/>
         <source>Updated {0}</source>
-        <translation>Mis à jour {0}</translation>
+        <translation>{0} atnaujinta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1307"/>
         <source>Checking for Pext updates</source>
-        <translation>Vérifier les mises à jour de Pext</translation>
+        <translation>Tikrinama, ar yra Pext atnaujinimų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1308"/>
         <source>Failed to check for Pext updates: {0}</source>
-        <translation>Échec de la recherche de mises à jour Pext : {0}</translation>
+        <translation>Nepavyko patikrinti Pext atnaujinimų: {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1309"/>
         <source>Pext is already up-to-date</source>
-        <translation>Pext est déjà à jour</translation>
+        <translation>Pext jau yra atnaujinta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1310"/>
         <source>Failed to check for updates for module {0}: {1}</source>
-        <translation>Échec de la recherche de mises à jour pour le module {0}&#xa0;: {1}</translation>
+        <translation>Nepavyko patikrinti modulio {0} atnaujinimų: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1311"/>
         <source>Failed to checkout branch for module {0}: {1}</source>
-        <translation>Échec de l&apos;extraction de la branche pour le module {0}&#xa0;: {1}</translation>
+        <translation>Nepavyko išsiregistruoti iš modulio {0} šakos: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1312"/>
         <source>Data queued for typing</source>
-        <translation>Données en attente de transposition</translation>
+        <translation>Duomenų eilėje įvedimui</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1313"/>
         <source>All queued data has been typed</source>
-        <translation>Tout le texte en file d&apos;attente a été tapé</translation>
+        <translation>Įvesti visi eilėje buvę duomenys</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1314"/>
         <source>Data queued for clipboard</source>
-        <translation>Données placées en file d&apos;attente pour le presse-papiers</translation>
+        <translation>Duomenys eilėje iškarpinei</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1315"/>
         <source>Data copied to clipboard</source>
-        <translation>Données copiées dans le presse-papier</translation>
+        <translation>Duomenys nukopijuoti į iškarpinę</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1316"/>
         <source>Enter arguments</source>
-        <translation>Entrez les arguments</translation>
+        <translation>Įveskite argumentus</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1317"/>
         <source>No context menu available</source>
-        <translation>Aucun menu contextuel disponible</translation>
+        <translation>Nėra prieinamo kontekstinio meniu</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1318"/>
         <source>No tab completion possible</source>
-        <translation>La complétion par onglet n&apos;est pas possible</translation>
+        <translation>Neįmanoma užbaigti skirtuko</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1319"/>
         <source>No entry selected</source>
-        <translation>Aucune entrée sélectionnée</translation>
+        <translation>Nepasirinktas joks įrašas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1320"/>
         <source>No command available for current filter</source>
-        <translation>Aucune commande disponible pour le filtre actuel</translation>
+        <translation>Dabartiniam filtrui nėra jokių komandų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1321"/>
         <source>Pynput is unavailable</source>
-        <translation>Pynput n&apos;est pas desponible</translation>
+        <translation>Pynput nepasiekiamas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1322"/>
         <source>PyAutoGUI is unavailable</source>
-        <translation>PyAutoGUI n&apos;est pas desponible</translation>
+        <translation>PyAutoGUI nepasiekiamas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1324"/>
         <source>Automatic update checks are enabled. You can change this in settings.</source>
-        <translation>Les vérifications de mise à jour automatiques sont activées. Vous pouvez modifier ceci dans les paramètres.</translation>
+        <translation>Įjungtas automatis atnaujinimų tikrinimas. Tai galite pakeisti nustatymuose.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1325"/>
         <source>Pext {0} is available. You are currently running Pext {1}.</source>
-        <translation>Pext {0} est disponible. Vous exécutez actuellement Pext {1}.</translation>
+        <translation>Galima Pext {0}. Šiuo metu naudojate Pext {1}.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1326"/>
         <source>Open download page</source>
-        <translation>Ouvrir la page de téléchargement</translation>
+        <translation>Atidaryti atsisiuntimo puslapį</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1327"/>
         <source>{0} can be updated.</source>
-        <translation>{0} peut être mis à jour.</translation>
+        <translation>{0} galima atnaujinti.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1328"/>
         <source>Update</source>
-        <translation>Mettre à jour</translation>
+        <translation>Atnaujinti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1329"/>
         <source>{0} can be updated but is currently in use.</source>
-        <translation>{0} peut être mis à jour mais est actuellement en exécution.</translation>
+        <translation>{0} gali būti atnaujinta, bet šiuo metu yra naudojama.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1330"/>
         <source>Update and reload</source>
-        <translation>Mettre à jour et recharger</translation>
+        <translation>Atnaujinti ir įkelti iš naujo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1331"/>
         <source>An error occured in {0}: {1}.</source>
-        <translation>Une erreur s&apos;est produite dans {0}&#xa0;: {1}.</translation>
+        <translation>{0} įvyko klaida: {1}.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1332"/>
         <source>Report as bug</source>
-        <translation>Signaler comme erreur</translation>
+        <translation>Pranešti apie problemą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="486"/>
         <source>Manage modules</source>
-        <translation>Gérer les modules</translation>
+        <translation>Tvarkyti modulius</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="29"/>
@@ -1081,77 +1081,77 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/main.qml" line="411"/>
         <source>&amp;Pext</source>
-        <translation></translation>
+        <translation>&amp;Pext</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="642"/>
         <source>P&amp;rofile</source>
-        <translation>P&amp;rofil</translation>
+        <translation>P&amp;rofilis</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="838"/>
         <source>Automatic updates</source>
-        <translation>Mises à jour automatiques</translation>
+        <translation>Automatiniai atnaujinimai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="842"/>
         <source>Automatically check for Pext updates</source>
-        <translation>Vérifier automatiquement les mises à jour pour Pext</translation>
+        <translation>Automatiškai tikrinti, ar yra Pext atnaujinimų</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="871"/>
         <source>Always show tray icon</source>
-        <translation>Toujours afficher l&apos;icône dans la barre de tâche</translation>
+        <translation>Visada rodyti programų dėklo piktogramą</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="881"/>
         <source>About</source>
-        <translation>À propos</translation>
+        <translation>Apie</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="902"/>
         <source>Visit homepage</source>
-        <translation>Visiter la page d&apos;accueil</translation>
+        <translation>Apsilankykite pagrindiniame puslapyje</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="984"/>
         <source>Type to search</source>
-        <translation>Taper pour rechercher</translation>
+        <translation>Įveskite, jei norite ieškoti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1064"/>
         <source>Hotkey reference</source>
-        <translation>Référence de raccourci</translation>
+        <translation>Sparčiųjų klavišų nuoroda</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1162"/>
         <source>Alerts</source>
-        <translation>Alertes</translation>
+        <translation>Įspėjimai</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1164"/>
         <source>Accept</source>
-        <translation>Accepter</translation>
+        <translation>Priimti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1168"/>
         <source>Decline</source>
-        <translation>Refuser</translation>
+        <translation>Atmesti</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1279"/>
         <source>Processing: %1 (%2)</source>
-        <translation>En cours de traitement : %1 (%2)</translation>
+        <translation>Apdorojama: %1 (%2)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1281"/>
         <source>Ready</source>
-        <translation>Prêt</translation>
+        <translation>Paruošta</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1283"/>
         <source>Waiting</source>
-        <translation>En attente</translation>
+        <translation>Laukiama</translation>
     </message>
 </context>
 </TS>
