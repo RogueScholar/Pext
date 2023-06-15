@@ -7,6 +7,10 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Shift+Escape hotkey to reset selection to base and minimize
+
 ### Changed
 
 - Pext no longer deletes invalid modules from disk
