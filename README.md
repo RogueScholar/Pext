@@ -1,13 +1,13 @@
 # Pext
 
 <a href="https://repology.org/metapackage/pext/versions">
-    <img src="https://repology.org/badge/vertical-allrepos/pext.svg?minversion=0.29" alt="Packaging status" align="right">
+    <img src="https://repology.org/badge/vertical-allrepos/pext.svg?minversion=0.35" alt="Packaging status" align="right">
 </a>
 
 ![Lilly the leoger](/assets/logo.png)
 
 [![REUSE status](https://api.reuse.software/badge/github.com/Pext/Pext)](https://api.reuse.software/info/github.com/Pext/Pext)
-[![Linux & macOS Build Status](https://travis-ci.org/Pext/Pext.svg?branch=master)](https://travis-ci.org/Pext/Pext)
+[![Linux & macOS Build Status](https://github.com/Pext/Pext/actions/workflows/main.yml/badge.svg)](https://github.com/Pext/Pext/actions/workflows/main.yml)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/73oaa4x1spa5vumx/branch/master?svg=true)](https://ci.appveyor.com/project/TheLastProject/pext/branch/master)
 [![ReadTheDocs](https://readthedocs.org/projects/pext/badge/?version=latest)](https://pext.readthedocs.io/en/latest/?badge=latest)
 [![Translation status](https://hosted.weblate.org/widgets/pext/-/svg-badge.svg)](https://hosted.weblate.org/engage/pext/?utm_source=widget)
@@ -18,7 +18,7 @@
 
 - [Introduction](#introduction)
 - [How it works](#how-it-works)
-- [Installation](https://pext.readthedocs.io/en/latest/installation.html)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Hotkeys](#hotkeys)
 - [Community](#community)
@@ -60,6 +60,10 @@ Simply put:
 - Search (for something)
 - Select (with Enter)
 - Hide (automatically)
+
+## Installation
+
+Check the install instructions at [Read the Docs](https://pext.readthedocs.io/en/latest/installation.html).
 
 ## Usage
 
@@ -116,7 +120,7 @@ following options:
 All these channels are linked to each other, so there is no need to worry about
 missing out.
 
-We can also be reached on Twitter: [@PextTool](https://twitter.com/PextTool)
+Both channels are linked to each other, so there is no need to worry about missing out.
 
 ## License
 

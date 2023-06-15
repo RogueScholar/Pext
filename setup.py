@@ -9,21 +9,57 @@ pext_version_path = os.path.join(pext_path, 'pext', 'VERSION')
 with open(pext_version_path) as version_file:
     version = version_file.read().strip()
 
-try:
-    from dulwich.porcelain import describe
-    print("Updating version with dulwich")
-    version = describe(pext_path)
-except Exception as e:
-    print("Failed to determine version with dulwich, falling back to git describe: {}".format(e))
-    try:
-        version = check_output(['git', 'describe'], cwd=pext_path).splitlines()[0]
-    except Exception as e:
-        print("Failed to determine version with git describe: {}".format(e))
+print("Calculating current version")
+version_found = None
 
-if isinstance(version, bytes):
-    version = version.decode()
+# Get version name from AppVeyor
+if 'APPVEYOR' in os.environ:
+    if os.environ['APPVEYOR_REPO_TAG'] == "true":
+        version_found = os.environ['APPVEYOR_REPO_TAG_NAME']
+        print(f"AppVeyor: Set version to {version_found} from APPVEYOR_REPO_TAG_NAME")
+    else:
+        print(f"AppVeyor: Not a tagged version, APPVEYOR_REPO_TAG is {os.environ['APPVEYOR_REPO_TAG']} instead of true")
+else:
+    print("AppVeyor: No valid version info")
+
+# Get version name from GitHub
+if not version_found:
+    if 'GITHUB_REF_TYPE' in os.environ:
+        if os.environ['GITHUB_REF_TYPE'] == "tag":
+            version_found = os.environ['GITHUB_REF_NAME']
+            print(f"GitHub: Set version to {version_found} from GITHUB_REF_NAME")
+        else:
+            print(f"GitHub: Found {os.environ['GITHUB_REF_NAME']} in GITHUB_REF_NAME but GITHUB_REF_TYPE is {os.environ['GITHUB_REF_TYPE']} instead of tag")
+    else:
+        print("GitHub: No valid version info")
+
+# Get version name from Dulwich
+if not version_found:
+    try:
+        from dulwich.porcelain import describe
+        version_found = describe(pext_path)
+        print(f"Dulwich: Set version to {version_found} using describe")
+    except Exception as e:
+        print("Dulwich: Failed to determine version with dulwich: {}".format(e))
+
+# Get version name from Git
+if not version_found:
+    try:
+        version_found = check_output(['git', 'describe'], cwd=pext_path).splitlines()[0]
+    except Exception as e:
+        print("Git: Failed to determine version with git describe: {}".format(e))
+
+if version_found:
+    if isinstance(version_found, bytes):
+        version = version_found.decode()
+    else:
+        version = version_found
 
 version = version.lstrip("v")
+
+# Translate 3-parted git versions to PEP 440-compliant version strings
+if len(version_parts := version.split("-")) == 3:
+    version = f"{version_parts[0]}.dev{version_parts[1]}+{version_parts[2]}"
 
 with open(pext_version_path, "w") as version_file:
     version_file.write(version)
@@ -76,14 +112,14 @@ setup(
     packages=[
         'pext',
         'pext/helpers',
-        'pext_dev'
+        'pext_dev',
     ],
     package_data={'pext': ['VERSION', 'i18n/*.qm', 'images/128x128/*', 'images/scalable/*', 'qml/*', 'helpers/*', '*.py', 'Pext.workflow/*'],
                   'pext_dev': ['module/*', 'theme/*', '*.py']},
     zip_safe=False,
     entry_points={
         'gui_scripts': [
-            'pext=pext.__main__:main'
+            'pext=pext.__main__:run_qt5'
         ],
         'console_scripts': [
             'pext_dev=pext_dev.__main__:main'

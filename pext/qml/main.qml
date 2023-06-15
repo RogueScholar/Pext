@@ -508,7 +508,7 @@ ApplicationWindow {
                 objectName: "menuInstallModule"
                 title: qsTr("Install module")
 
-                signal installModuleRequest(string url, string identifier, string name)
+                signal installModuleRequest(string url, string identifier, string name, string branch)
 
                 MenuItem {
                     id: menuInstallModuleFromList
@@ -600,7 +600,7 @@ ApplicationWindow {
                 objectName: "menuInstallTheme"
                 title: qsTr("Install theme")
 
-                signal installThemeRequest(string url, string identifier, string name)
+                signal installThemeRequest(string url, string identifier, string name, string branch)
 
                 MenuItem {
                     id: menuInstallThemeFromList
@@ -771,7 +771,7 @@ ApplicationWindow {
                         id: menuOutputSeparatorGroup
                         objectName: "menuOutputSeparatorGroup"
                     }
-    
+
                     MenuItem {
                         objectName: "menuOutputSeparatorNone"
                         text: qsTr("Nothing")
@@ -1017,7 +1017,23 @@ ApplicationWindow {
             id: tabs
             objectName: "tabs"
 
+            signal disableRequest(int index, int reason);
+            signal updateStateRequest(int index, string state);
             signal removeRequest(int index);
+
+            onDisableRequest: {
+                tabs.getTab(index).item.disableReason = reason;
+                tabs.getTab(index).item.progressStates = [];
+            }
+
+            onUpdateStateRequest: {
+                var disableReason = tabs.getTab(index).item.disableReason;
+                tabs.getTab(index).item.progressStates.push(state);
+
+                // Forcefully ensure redraw
+                tabs.getTab(index).item.disableReason = 0;
+                tabs.getTab(index).item.disableReason = disableReason;
+            }
 
             onRemoveRequest: {
                 tabs.getTab(index).sourceComponent = undefined;
@@ -1292,6 +1308,7 @@ ApplicationWindow {
     property string tr_failed_to_check_for_pext_updates: qsTr("Failed to check for Pext updates: {0}")
     property string tr_pext_is_already_up_to_date: qsTr("Pext is already up-to-date")
     property string tr_failed_to_check_for_module_update: qsTr("Failed to check for updates for module {0}: {1}")
+    property string tr_failed_to_checkout_module_branch: qsTr("Failed to checkout branch for module {0}: {1}")
     property string tr_data_queued_for_typing: qsTr("Data queued for typing")
     property string tr_queued_data_typed: qsTr("All queued data has been typed")
     property string tr_data_queued_for_clipboard: qsTr("Data queued for clipboard")
