@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<TS version="2.1" language="pt">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../qml/AboutDialog.qml" line="25"/>
         <source>About Pext</source>
-        <translation>À propos de Pext</translation>
+        <translation>Sobre o Pext</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="58"/>
         <source>Copyright</source>
-        <translation></translation>
+        <translation>Direitos do autor</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="90"/>
         <source>Translators</source>
-        <translation>Traducteurs</translation>
+        <translation>Tradutores</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="101"/>
         <source>Want to help translate Pext? Please click here.</source>
-        <translation>Voulez-vous aider à traduire Pext ? Cliquez ici s&apos;il vous plaît.</translation>
+        <translation>Quer ajudar a traduzir o Pext? Por favor, clique aqui.</translation>
     </message>
     <message>
         <location filename="../qml/AboutDialog.qml" line="102"/>
         <source>The Pext team would like to thank the following users for translating Pext:</source>
-        <translation>L&apos;équipe Pext aimerait remercier les utilisateurs suivants pour la traduction de Pext :</translation>
+        <translation>Os programadores do Pext agradecem a esses utilizadores por traduzirem o Pext:</translation>
     </message>
 </context>
 <context>
@@ -47,12 +47,12 @@
     <message>
         <location filename="../qml/CommandArgsDialog.qml" line="26"/>
         <source>Arguments for %1</source>
-        <translation>Arguments pour %1</translation>
+        <translation>Argumentos para %1</translation>
     </message>
     <message>
         <location filename="../qml/CommandArgsDialog.qml" line="34"/>
         <source>Enter arguments for %1</source>
-        <translation>Entrer des arguments pour %1</translation>
+        <translation>Inserir argumentos para %1</translation>
     </message>
 </context>
 <context>
@@ -69,11 +69,11 @@
 This will stop any running module.
 
 Are you sure you want to quit?</source>
-        <translation>Vous êtes sur le point de quitter Pext.
+        <translation>Estás prestes a deixar o Pext.
 
-Ceci arrêtera tout module en cours d&apos;exécution.
+Isto irá parar qualquer módulo(s) em execução.
 
-Êtes-vous sûr(e) de vouloir quitter&#xa0;?</translation>
+Tens a certeza que queres desistir?</translation>
     </message>
     <message>
         <location filename="../qml/ConfirmQuitDialog.qml" line="31"/>
@@ -82,11 +82,11 @@ Ceci arrêtera tout module en cours d&apos;exécution.
 This will stop any running module and the global hotkey will not work until you restart Pext manually.
 
 Are you sure you want to quit?</source>
-        <translation>Vous êtes sur le point de quitter Pext.
+        <translation>Estás prestes a deixar o Pext.
 
-Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier global ne fonctionnera pas tant que vous n&apos;aurez pas redémarré Pext manuellement.
+Isto irá parar qualquer módulo em execução e a tecla de atalho global não irá funcionar até que reinicie o Pext manualmente.
 
-Êtes-vous sûr(e) de vouloir quitter ?</translation>
+Tens a certeza que queres desistir?</translation>
     </message>
 </context>
 <context>
@@ -120,87 +120,87 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="26"/>
         <source>Module Installation</source>
-        <translation>Installation de Modules</translation>
+        <translation>Instalação do módulo</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="26"/>
         <source>Theme Installation</source>
-        <translation>Installation de Thèmes</translation>
+        <translation>Instalação do tema</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="46"/>
         <source>Module source:</source>
-        <translation>Source du module :</translation>
+        <translation>Fonte do módulo:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="46"/>
         <source>Theme source:</source>
-        <translation>Source du Thème :</translation>
+        <translation>Fonte do tema:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="63"/>
         <source>No modules available from this source.</source>
-        <translation>Aucun module disponible à partir de cette source.</translation>
+        <translation>Não há módulos disponíveis a partir desta fonte.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="63"/>
         <source>No themes available from this source.</source>
-        <translation>Aucun thème disponible à partir de cette source.</translation>
+        <translation>Não há temas disponíveis a partir desta fonte.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="71"/>
         <source>Unsupported repository format (expected version %1, not %2).</source>
-        <translation>Format de référentiel non pris en charge (version attendue %1, pas %2).</translation>
+        <translation>Formato de repositório não suportado (versão esperada %1, não %2).</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="79"/>
         <source>Module:</source>
-        <translation>Module :</translation>
+        <translation>Módulo:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="93"/>
         <source>Download source:</source>
-        <translation>Source de téléchargement :</translation>
+        <translation>Fonte de descarrega:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="107"/>
         <source>This module is already installed.</source>
-        <translation>Ce module est déjà installé.</translation>
+        <translation>Este módulo já está instalado.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="107"/>
         <source>This theme is already installed.</source>
-        <translation>Ce thème est déjà installé.</translation>
+        <translation>Este tema já está instalado.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="115"/>
         <source>This module does not seem to support %1.</source>
-        <translation>Ce module ne semble pas prendre en charge %1.</translation>
+        <translation>Este módulo não parece suportar %1.</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="123"/>
         <source>Details:</source>
-        <translation>Détails :</translation>
+        <translation>Detalhes:</translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="131"/>
         <source>Creator: </source>
-        <translation>Créateur(trice) : </translation>
+        <translation>Criador: </translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="138"/>
         <source>Description: </source>
-        <translation>Description : </translation>
+        <translation>Descrição: </translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="145"/>
         <source>License: </source>
-        <translation>Licence : </translation>
+        <translation>Licença: </translation>
     </message>
     <message>
         <location filename="../qml/InstallFromRepositoryDialog.qml" line="152"/>
         <source>Only install modules from people you trust.</source>
-        <translation>Installer uniquement les modules des personnes de confiance.</translation>
+        <translation>Só instale módulos de pessoas em quem confia.</translation>
     </message>
 </context>
 <context>
@@ -208,12 +208,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallModuleFromRepositoryNoModulesAvailableDialog.qml" line="24"/>
         <source>No modules found</source>
-        <translation>Aucun module trouvé</translation>
+        <translation>Nenhum módulos encontrado</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositoryNoModulesAvailableDialog.qml" line="27"/>
         <source>No modules were found in this repository.</source>
-        <translation>Aucun module n&apos;a été trouvé dans ce référentiel.</translation>
+        <translation>Nenhum módulos foi encontrado neste repositório.</translation>
     </message>
 </context>
 <context>
@@ -221,52 +221,52 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="26"/>
         <source>Module installation</source>
-        <translation>Installation du module</translation>
+        <translation>Instalação do módulo</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="35"/>
         <source>Choose the module to install:</source>
-        <translation>Choisissez le module à installer :</translation>
+        <translation>Escolha o módulo para instalar:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="45"/>
         <source>Choose the preferred download source:</source>
-        <translation>Choisissez la source de téléchargement préférée :</translation>
+        <translation>Escolha a fonte de descarrega preferida:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="55"/>
         <source>You already have this module installed.</source>
-        <translation>Vous avez déjà installé ce module.</translation>
+        <translation>Este módulo já está instalado.</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="61"/>
         <source>This module does not seem to support %1.</source>
-        <translation>Ce module ne semble pas supporter %1.</translation>
+        <translation>Este módulo não parece suportar %1.</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="67"/>
         <source>Module information:</source>
-        <translation>Information du module :</translation>
+        <translation>Informação do módulo:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="71"/>
         <source>Developer: </source>
-        <translation>Développeur : </translation>
+        <translation>Programador: </translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="75"/>
         <source>Description: </source>
-        <translation>Description : </translation>
+        <translation>Descrição: </translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="79"/>
         <source>License: </source>
-        <translation>Licence : </translation>
+        <translation>Licença: </translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromRepositorySelectModuleDialog.qml" line="83"/>
         <source>As Pext modules are code, please make sure you trust the developer before continuing.</source>
-        <translation>Comme les modules Pext sont du code, assurez-vous de faire confiance au développeur avant de continuer.</translation>
+        <translation>Os módulos Pext são código. Por favor, certifique-se de confiar nos programadores antes de continuar.</translation>
     </message>
 </context>
 <context>
@@ -274,17 +274,17 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallModuleFromURLDialog.qml" line="26"/>
         <source>Module installation</source>
-        <translation>Installation du module</translation>
+        <translation>Instalação do módulo</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromURLDialog.qml" line="33"/>
         <source>Enter the metadata URL of the module to install:</source>
-        <translation>Entrez l&apos;URL méta data du module pour l&apos;installer :</translation>
+        <translation>Inserir o URL de metadados do módulo para instalar:</translation>
     </message>
     <message>
         <location filename="../qml/InstallModuleFromURLDialog.qml" line="42"/>
         <source>Only install modules from people you trust.</source>
-        <translation>Installer uniquement les modules des personnes de confiance.</translation>
+        <translation>Só instale módulos de pessoas em quem confia.</translation>
     </message>
 </context>
 <context>
@@ -292,12 +292,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/InstallThemeFromURLDialog.qml" line="26"/>
         <source>Theme installation</source>
-        <translation>Installation de thème</translation>
+        <translation>Instalação do tema</translation>
     </message>
     <message>
         <location filename="../qml/InstallThemeFromURLDialog.qml" line="33"/>
         <source>Enter the metadata URL of the theme to install:</source>
-        <translation>Entrez l&apos;URL méta data du thème pour l&apos;installer :</translation>
+        <translation>Inserir o URL de metadados do tema para instalar:</translation>
     </message>
 </context>
 <context>
@@ -305,17 +305,17 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/LoadModuleDialog.qml" line="26"/>
         <source>Load module</source>
-        <translation>Charger le module</translation>
+        <translation>Carregar módulo</translation>
     </message>
     <message>
         <location filename="../qml/LoadModuleDialog.qml" line="44"/>
         <source>Choose the module to load:</source>
-        <translation>Choisissez le module à charger :</translation>
+        <translation>Escolha o módulo para carregar:</translation>
     </message>
     <message>
         <location filename="../qml/LoadModuleDialog.qml" line="99"/>
         <source>Get more modules</source>
-        <translation>Obtenir plus de modules</translation>
+        <translation>Obter mais módulos</translation>
     </message>
 </context>
 <context>
@@ -323,22 +323,22 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="26"/>
         <source>Load profile</source>
-        <translation>Charger le profil</translation>
+        <translation>Carregar perfil</translation>
     </message>
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="40"/>
         <source>Choose the profile to switch to:</source>
-        <translation>Choisissez le profil à utiliser pour :</translation>
+        <translation>Escolha o perfil para o qual mudar:</translation>
     </message>
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="51"/>
         <source>Open in a new window</source>
-        <translation>Ouvrir une nouvelle fenêtre</translation>
+        <translation>Abrir numa nova janela</translation>
     </message>
     <message>
         <location filename="../qml/LoadProfileDialog.qml" line="56"/>
         <source>Note: Pext will restart to switch profile.</source>
-        <translation>Remarque : Pext redémarrera pour changer de profil.</translation>
+        <translation>Nota: A Pext reiniciará para mudar o perfil.</translation>
     </message>
 </context>
 <context>
@@ -346,27 +346,27 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="26"/>
         <source>Switch theme</source>
-        <translation>Changer de thème</translation>
+        <translation>Mudar tema</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="42"/>
         <source>Choose the theme to switch to:</source>
-        <translation>Choisissez le thème vers lequel basculer :</translation>
+        <translation>Escolha o tema para o qual mudar:</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="47"/>
         <source>No theme</source>
-        <translation>Pas de thème</translation>
+        <translation>Nenhum tema</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="52"/>
         <source>Note: Pext will restart to apply the new theme.</source>
-        <translation>Remarque : Pext redémarrera pour appliquer le nouveau thème.</translation>
+        <translation>Nota: A Pext reiniciará para aplicar o novo tema.</translation>
     </message>
     <message>
         <location filename="../qml/LoadThemeDialog.qml" line="56"/>
         <source>Get more themes</source>
-        <translation>Obtenir plus de thèmes</translation>
+        <translation>Obter mais temas</translation>
     </message>
 </context>
 <context>
@@ -374,57 +374,57 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/ManageDialog.qml" line="26"/>
         <source>Manage modules</source>
-        <translation>Gérer les modules</translation>
+        <translation>Gerir módulos</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="26"/>
         <source>Manage themes</source>
-        <translation>Gérer les thèmes</translation>
+        <translation>Gerir temas</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="61"/>
         <source>Identifier: %1</source>
-        <translation>Identifiant : %1</translation>
+        <translation>Identificador: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="69"/>
         <source>Version: %1 (%2)</source>
-        <translation>Version : %1 (%2)</translation>
+        <translation>Versão: %1 (%2)</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="77"/>
         <source>Developer: %1</source>
-        <translation>Développeur : %1</translation>
+        <translation>Programador: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="85"/>
         <source>Description: %1</source>
-        <translation>Description : %1</translation>
+        <translation>Descrição: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="93"/>
         <source>License: %1</source>
-        <translation>Licence : %1</translation>
+        <translation>Licença: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="101"/>
         <source>Homepage: %1</source>
-        <translation>Page d&apos;accueil : %1</translation>
+        <translation>Página inicial: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="118"/>
         <source>Download source: %1</source>
-        <translation>Source de téléchargement : %1</translation>
+        <translation>Fonte de descarrega: %1</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="136"/>
         <source>Update</source>
-        <translation>Mise à jour</translation>
+        <translation>Atualizar</translation>
     </message>
     <message>
         <location filename="../qml/ManageDialog.qml" line="146"/>
         <source>Uninstall</source>
-        <translation>Désinstaller</translation>
+        <translation>Desinstalar</translation>
     </message>
 </context>
 <context>
@@ -432,27 +432,27 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="26"/>
         <source>Manage profiles</source>
-        <translation>Gérer les profils</translation>
+        <translation>Gerir perfis</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="44"/>
         <source>Enter profile name</source>
-        <translation>Entrez un nom de profil</translation>
+        <translation>Inserir o nome do perfil</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="48"/>
         <source>Create</source>
-        <translation>Créer</translation>
+        <translation>Criar</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="80"/>
         <source>Rename</source>
-        <translation>Renommer</translation>
+        <translation>Alterar nome</translation>
     </message>
     <message>
         <location filename="../qml/ManageProfilesDialog.qml" line="90"/>
         <source>Remove</source>
-        <translation>Retirer</translation>
+        <translation>Remover</translation>
     </message>
 </context>
 <context>
@@ -460,17 +460,17 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/ModuleData.qml" line="213"/>
         <source>No results</source>
-        <translation>Aucun résultat</translation>
+        <translation>Sem resultados</translation>
     </message>
     <message>
         <location filename="../qml/ModuleData.qml" line="412"/>
         <source>Module crashed.</source>
-        <translation>Le module a planté.</translation>
+        <translation>O módulo travou.</translation>
     </message>
     <message>
         <location filename="../qml/ModuleData.qml" line="415"/>
         <source>Updating module…</source>
-        <translation>Mise à jour du module…</translation>
+        <translation>A atualizar módulo…</translation>
     </message>
 </context>
 <context>
@@ -478,12 +478,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/NoModulesInstalledDialog.qml" line="24"/>
         <source>No modules installed</source>
-        <translation>Pas de modules installé</translation>
+        <translation>Nenhum módulos instalados</translation>
     </message>
     <message>
         <location filename="../qml/NoModulesInstalledDialog.qml" line="27"/>
         <source>No modules installed, please install one first.</source>
-        <translation>Aucun module installé, veuillez en installer un en premier.</translation>
+        <translation>Sem módulos instalado, por favor instale primeiro.</translation>
     </message>
 </context>
 <context>
@@ -491,12 +491,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/NoThemesInstalledDialog.qml" line="24"/>
         <source>No themes installed</source>
-        <translation>Pas de thèmes installé</translation>
+        <translation>Nenhum temas instalado</translation>
     </message>
     <message>
         <location filename="../qml/NoThemesInstalledDialog.qml" line="27"/>
         <source>No themes installed, please install one first.</source>
-        <translation>Aucun thème installé, veuillez en installer un en premier.</translation>
+        <translation>Não temas instalado. Por favor, instale primeiro.</translation>
     </message>
 </context>
 <context>
@@ -504,12 +504,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/OnlyOneProfileDialog.qml" line="24"/>
         <source>Only one profile available</source>
-        <translation>Un seul profil disponible</translation>
+        <translation>Apenas um perfil disponível</translation>
     </message>
     <message>
         <location filename="../qml/OnlyOneProfileDialog.qml" line="27"/>
         <source>There is only one profile available. Please create a second profile first.</source>
-        <translation>Il n&apos;y a qu&apos;un seul profil disponible. Veuillez d&apos;abord créer un second profil.</translation>
+        <translation>Existe apenas um perfil disponível. Por favor, primeiro criar um segundo perfil.</translation>
     </message>
 </context>
 <context>
@@ -530,12 +530,12 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/RenameProfileDialog.qml" line="26"/>
         <source>Rename profile</source>
-        <translation>Renommer le profil</translation>
+        <translation>Alterar o nome do perfil</translation>
     </message>
     <message>
         <location filename="../qml/RenameProfileDialog.qml" line="37"/>
         <source>Please choose a new name for this profile.</source>
-        <translation>Veuillez choisir un nouveau nom pour ce profil.</translation>
+        <translation>Por favor, escolha um novo nome para este perfil.</translation>
     </message>
 </context>
 <context>
@@ -543,529 +543,529 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/main.qml" line="415"/>
         <source>Quit</source>
-        <translation>Quitter</translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="421"/>
         <source>&amp;Module</source>
-        <translation></translation>
+        <translation>&amp;Módulo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="425"/>
         <source>Switch to next loaded module</source>
-        <translation>Passer au prochain module chargé</translation>
+        <translation>Mudar para o próximo módulo carregado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="433"/>
         <source>Switch to previous loaded module</source>
-        <translation>Passer au module chargé précédent</translation>
+        <translation>Mudar para o módulo carregado anteriormente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="444"/>
         <source>Reload active module</source>
-        <translation>Recharger le module actif</translation>
+        <translation>Recarregar módulo ativo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="452"/>
         <source>Close active module</source>
-        <translation>Fermer le module actif</translation>
+        <translation>Fechar o módulo ativo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="465"/>
         <source>Load module</source>
-        <translation>Charger le module</translation>
+        <translation>Carregar módulo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="509"/>
         <source>Install module</source>
-        <translation>Installer le module</translation>
+        <translation>Instalar módulo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="515"/>
         <source>From online module list</source>
-        <translation>De la liste des modules en ligne</translation>
+        <translation>A partir da lista de módulos online</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="538"/>
         <location filename="../qml/main.qml" line="630"/>
         <source>From URL</source>
-        <translation>Depuis l&apos;URL</translation>
+        <translation>Do URL</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="550"/>
         <source>&amp;Theme</source>
-        <translation></translation>
+        <translation>&amp;Tema</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="558"/>
         <source>Switch theme</source>
-        <translation>Changer de thème</translation>
+        <translation>Mudar tema</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="578"/>
         <source>Manage themes</source>
-        <translation>Gérer les thèmes</translation>
+        <translation>Gerir temas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="601"/>
         <source>Install theme</source>
-        <translation>Installer un thème</translation>
+        <translation>Instalar tema</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="607"/>
         <source>From online theme list</source>
-        <translation>De la liste des thèmes en ligne</translation>
+        <translation>A partir da lista de temas online</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="646"/>
         <source>Switch profile</source>
-        <translation>Changer de profil</translation>
+        <translation>Mudar perfil</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="666"/>
         <source>Manage profiles</source>
-        <translation>Gérer les profils</translation>
+        <translation>Gerir perfis</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="684"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Paramètres</translation>
+        <translation>&amp;Definições</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="688"/>
         <source>Turbo Mode</source>
-        <translation>Mode Turbo</translation>
+        <translation>Modo turbo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="696"/>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="706"/>
         <source>System locale</source>
-        <translation>Paramètres régionaux du système</translation>
+        <translation>Localidade do sistema</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="730"/>
         <source>Output style</source>
-        <translation>Format de sortie</translation>
+        <translation>Estilo de saída</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="739"/>
         <source>Copy to default clipboard</source>
-        <translation>Copier dans le presse-papier défaut</translation>
+        <translation>Copiar para a área de transferência predefinido</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="747"/>
         <source>Copy to selection clipboard (X11)</source>
-        <translation>Copier dans le presse-papiers de sélection (X11)</translation>
+        <translation>Copiar para área de transferência da seleção (X11)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="755"/>
         <source>Copy to find buffer (macOS)</source>
-        <translation>Copier pour trouver le tampon (macOS)</translation>
+        <translation>Copiar para o buffer de pesquisa (MacOS)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="762"/>
         <source>Type automatically</source>
-        <translation>Tapez automatiquement</translation>
+        <translation>Digite automaticamente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="768"/>
         <source>Separator between output queue entries</source>
-        <translation>Séparateur entre les entrées de file d&apos;attente de sortie</translation>
+        <translation>Separador entre as entradas da fila de saída</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="777"/>
         <source>Nothing</source>
-        <translation>Rien</translation>
+        <translation>Nada</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="799"/>
         <source>Minimizing behaviour</source>
-        <translation>Minimiser la page</translation>
+        <translation>Minimizando o comportamento</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="808"/>
         <source>Minimize normally</source>
-        <translation>Minimiser normalement</translation>
+        <translation>Minimizar normalmente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="816"/>
         <source>Minimize to tray</source>
-        <translation>Réduire en tâche de fond</translation>
+        <translation>Minimizar para a bandeja</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="823"/>
         <source>Manual only: Minimize normally</source>
-        <translation>Manuel seulement : réduire normalement</translation>
+        <translation>Somente manual: Minimizar normalmente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="831"/>
         <source>Manual only: Minimize to tray</source>
-        <translation>Manuel seulement : réduire en tâche de fond</translation>
+        <translation>Somente manual: Minimize para a bandeja</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="850"/>
         <source>Automatically check for module and theme updates</source>
-        <translation>Rechercher automatiquement les mises à jour des modules et des thèmes</translation>
+        <translation>Buscar atualizações de módulos e temas automaticamente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="856"/>
         <source>Automatically install module and theme updates</source>
-        <translation>Installer automatiquement les mises à jour des modules et des thèmes</translation>
+        <translation>Instalar atualizações de módulos e temas automaticamente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="865"/>
         <source>Move Pext to the foreground when global hotkey is pressed (%1)</source>
-        <translation>Déplacer Pext an avant lorsque l&apos;utilisateur appuie sur la touche de raccourci globale (%1)</translation>
+        <translation>Mover o Pext para o primeiro plano quando a tecla de atalho global é pressionado (%1)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="877"/>
         <source>&amp;Help</source>
-        <translation>&amp;Aide</translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="891"/>
         <source>Check for updates</source>
-        <translation>Vérifier les mises à jour</translation>
+        <translation>Procurar por atualizações</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="897"/>
         <source>Install quick action service</source>
-        <translation>Installer un service d&apos;action rapide</translation>
+        <translation>Instale um serviço de acção rápida</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1094"/>
         <source>Move Pext to the foreground</source>
-        <translation>Déplacer Pext au premier plan</translation>
+        <translation>Mover Pext para o primeiro plano</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1099"/>
         <source>Minimize</source>
-        <translation>Réduire</translation>
+        <translation>Minimizar</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1112"/>
         <source>Tabs</source>
-        <translation>Onglets</translation>
+        <translation>Separadores</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1114"/>
         <source>Open a new tab</source>
-        <translation>Ouvrir un nouvel onglet</translation>
+        <translation>Abrir um novo separador</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1118"/>
         <source>Reload active tab</source>
-        <translation>Recharger l&apos;onglet actif</translation>
+        <translation>Recarregar o separador ativo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1122"/>
         <source>Close active tab</source>
-        <translation>Fermer l&apos;onglet actif</translation>
+        <translation>Fechar o separador ativo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1126"/>
         <source>Switch to next tab</source>
-        <translation>Aller à l&apos;onglet suivant</translation>
+        <translation>Mudar para o próximo separador</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1130"/>
         <source>Switch to previous tab</source>
-        <translation>Aller à l&apos;onglet précédent</translation>
+        <translation>Mudar para o separador anterior</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1135"/>
         <source>Modules</source>
-        <translation>Modules</translation>
+        <translation>Módulos</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1107"/>
         <source>Complete input</source>
-        <translation>Saisie complète</translation>
+        <translation>Completa a entrada</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1103"/>
         <source>Go back to module&apos;s base level and minimize</source>
-        <translation>Revenir au niveau de base du module et minimiser</translation>
+        <translation>Volte ao nível básico do módulo e minimize</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1137"/>
         <source>Go back</source>
-        <translation>Retour</translation>
+        <translation>Voltar atrás</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1141"/>
         <source>Activate highlighted entry</source>
-        <translation>Activer l&apos;entrée en surbrillance</translation>
+        <translation>Ativar entrada destacada</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1142"/>
         <source>Left mouse button</source>
-        <translation>Bouton gauche de la souris</translation>
+        <translation>Botão esquerdo do rato</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1145"/>
         <source>Activate highlighted entry (never minimize)</source>
-        <translation>Activer l&apos;entrée en surbrillance (ne jamais minimiser)</translation>
+        <translation>Ativar entrada destacada (nunca minimizar)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1146"/>
         <source>Middle mouse button</source>
-        <translation>Bouton central de la souris</translation>
+        <translation>Botão do meio do rato</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1149"/>
         <source>Enter arguments for highlighted command</source>
-        <translation>Entrez les arguments pour la commande en surbrillance</translation>
+        <translation>Inserir argumentos para o comando destacado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1150"/>
         <location filename="../qml/main.qml" line="1154"/>
         <source>Right mouse button</source>
-        <translation>Bouton droit de la souris</translation>
+        <translation>Botão direito do rato</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1153"/>
         <source>Open context menu</source>
-        <translation>Ouvrir le menu contextuel</translation>
+        <translation>Abrir menu de contexto</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1157"/>
         <source>Change sorting style</source>
-        <translation>Changer le style de tri</translation>
+        <translation>Mudar o estilo de ordenação</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1235"/>
         <source>Sort: Module</source>
-        <translation>Trier&#xa0;: Module</translation>
+        <translation>Ordenar: Módulo</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1237"/>
         <source>Sort: Ascending</source>
-        <translation>Trier par ordre croissant</translation>
+        <translation>Ordenar: Ascendente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1239"/>
         <source>Sort: Descending</source>
-        <translation>Trier par ordre décroissant</translation>
+        <translation>Ordenar: Descendente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1290"/>
         <source>Module&apos;s Module class does not implement ModuleBase</source>
-        <translation>La classe de module du module n&apos;implémente pas ModuleBase</translation>
+        <translation>A classe do módulo não implementa ModuleBase</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1291"/>
         <source>Failed to load module {0}: {1} function has {2} parameters (excluding self), expected {3}</source>
-        <translation>Échec en retrouvez la module {0} : la {1} fonction contient {2} paramètres (en excluant ce paramètre), attendus {3}</translation>
+        <translation>Não foi carregada de módulo {0}: {1} função tem parâmetros {2} (excluindo-se a si mesmo), {3} esperados</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1292"/>
         <source>{0} is already installed</source>
-        <translation>{0} est déjà installé</translation>
+        <translation>{0} já está instalado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1293"/>
         <source>Downloading {0} from {1}</source>
-        <translation>Téléchargement de {0} à partir de {1}</translation>
+        <translation>A transferir {0} de {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1294"/>
         <source>Failed to download {0}: {1}</source>
-        <translation>Échec du téléchargement de {0} : {1}</translation>
+        <translation>Falha ao transferir {0}: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1295"/>
         <source>Downloading dependencies for {0}</source>
-        <translation>Téléchargement de dépendances pour {0}</translation>
+        <translation>Descarregar dependências para {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1296"/>
         <source>Failed to download dependencies for {0}</source>
-        <translation>Échec du téléchargement des dépendances pour {0}</translation>
+        <translation>Falha ao transferir dependências para {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1297"/>
         <source>Installed {0}</source>
-        <translation>Installée {0}</translation>
+        <translation>Instalado {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1298"/>
         <source>Uninstalling {0}</source>
-        <translation>Désinstaller {0}</translation>
+        <translation>A desinstalar {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1299"/>
         <source>{0} is already uninstalled</source>
-        <translation>{0} est déjà désinstallé</translation>
+        <translation>{0} já está desinstalado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1300"/>
         <source>Uninstalled {0}</source>
-        <translation>Désinstaller {0}</translation>
+        <translation>Desinstalado {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1301"/>
         <source>Updating {0}</source>
-        <translation>Mise à jour {0}</translation>
+        <translation>A atualizar {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1302"/>
         <source>{0} is already up to date</source>
-        <translation>{0} est déjà à jour</translation>
+        <translation>{0} já está actualizado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1303"/>
         <source>Failed to download update for {0}: {1}</source>
-        <translation>Impossible de télécharger la mise à jour pour {0} : {1}</translation>
+        <translation>Falha ao transferir a actualização para o {0}: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1304"/>
         <source>Updating dependencies for {0}</source>
-        <translation>Mise à jour des dépendances pour {0}</translation>
+        <translation>Actualizar as dependências para {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1305"/>
         <source>Failed to update dependencies for {0}</source>
-        <translation>Échec de la mise à jour des dépendances pour {0}</translation>
+        <translation>Falha ao atualizar as dependências para {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1306"/>
         <source>Updated {0}</source>
-        <translation>Mis à jour {0}</translation>
+        <translation>Atualizado {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1307"/>
         <source>Checking for Pext updates</source>
-        <translation>Vérifier les mises à jour de Pext</translation>
+        <translation>A procurar por atualizações do Pext</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1308"/>
         <source>Failed to check for Pext updates: {0}</source>
-        <translation>Échec de la recherche de mises à jour Pext : {0}</translation>
+        <translation>Falha ao obter atualizações do Pext: {0}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1309"/>
         <source>Pext is already up-to-date</source>
-        <translation>Pext est déjà à jour</translation>
+        <translation>O Pext já está atualizado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1310"/>
         <source>Failed to check for updates for module {0}: {1}</source>
-        <translation>Échec de la recherche de mises à jour pour le module {0}&#xa0;: {1}</translation>
+        <translation>Falha ao verificar se há atualizações para o módulo {0}: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1311"/>
         <source>Failed to checkout branch for module {0}: {1}</source>
-        <translation>Échec de l&apos;extraction de la branche pour le module {0}&#xa0;: {1}</translation>
+        <translation>Falha no ramo de checkout para o módulo {0}: {1}</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1312"/>
         <source>Data queued for typing</source>
-        <translation>Données en attente de transposition</translation>
+        <translation>Dados enfileirados para digitação</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1313"/>
         <source>All queued data has been typed</source>
-        <translation>Tout le texte en file d&apos;attente a été tapé</translation>
+        <translation>Todos os dados na fila foi digitado</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1314"/>
         <source>Data queued for clipboard</source>
-        <translation>Données placées en file d&apos;attente pour le presse-papiers</translation>
+        <translation>Dados enfileirados para a área de transferência</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1315"/>
         <source>Data copied to clipboard</source>
-        <translation>Données copiées dans le presse-papier</translation>
+        <translation>Dados copiados para a área de transferência</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1316"/>
         <source>Enter arguments</source>
-        <translation>Entrez les arguments</translation>
+        <translation>Inserir argumentos</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1317"/>
         <source>No context menu available</source>
-        <translation>Aucun menu contextuel disponible</translation>
+        <translation>Nenhum menu de contexto disponível</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1318"/>
         <source>No tab completion possible</source>
-        <translation>La complétion par onglet n&apos;est pas possible</translation>
+        <translation>Nenhuma conclusão de tecla de tabulação disponível</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1319"/>
         <source>No entry selected</source>
-        <translation>Aucune entrée sélectionnée</translation>
+        <translation>Nenhuma entrada selecionada</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1320"/>
         <source>No command available for current filter</source>
-        <translation>Aucune commande disponible pour le filtre actuel</translation>
+        <translation>Nenhum comando disponível para o filtro em uso</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1321"/>
         <source>Pynput is unavailable</source>
-        <translation>Pynput n&apos;est pas desponible</translation>
+        <translation>O pynput não está disponível</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1322"/>
         <source>PyAutoGUI is unavailable</source>
-        <translation>PyAutoGUI n&apos;est pas desponible</translation>
+        <translation>PyAutoGUI não está disponível</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1324"/>
         <source>Automatic update checks are enabled. You can change this in settings.</source>
-        <translation>Les vérifications de mise à jour automatiques sont activées. Vous pouvez modifier ceci dans les paramètres.</translation>
+        <translation>As atualizações automáticas estão ativadas; pode alterar-lo nas configurações.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1325"/>
         <source>Pext {0} is available. You are currently running Pext {1}.</source>
-        <translation>Pext {0} est disponible. Vous exécutez actuellement Pext {1}.</translation>
+        <translation>Pext {0} está disponível. Está atualmente executando Pext {1}.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1326"/>
         <source>Open download page</source>
-        <translation>Ouvrir la page de téléchargement</translation>
+        <translation>Abrir página de descarrega</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1327"/>
         <source>{0} can be updated.</source>
-        <translation>{0} peut être mis à jour.</translation>
+        <translation>{0} pode ser atualizado.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1328"/>
         <source>Update</source>
-        <translation>Mettre à jour</translation>
+        <translation>Atualizar</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1329"/>
         <source>{0} can be updated but is currently in use.</source>
-        <translation>{0} peut être mis à jour mais est actuellement en exécution.</translation>
+        <translation>{0} pode ser atualizado, mas está em uso no momento.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1330"/>
         <source>Update and reload</source>
-        <translation>Mettre à jour et recharger</translation>
+        <translation>Actualizar e recarregar</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1331"/>
         <source>An error occured in {0}: {1}.</source>
-        <translation>Une erreur s&apos;est produite dans {0}&#xa0;: {1}.</translation>
+        <translation>Ocorreu um erro em {0}: {1}.</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1332"/>
         <source>Report as bug</source>
-        <translation>Signaler comme erreur</translation>
+        <translation>Reportar um erro</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="486"/>
         <source>Manage modules</source>
-        <translation>Gérer les modules</translation>
+        <translation>Gerir módulos</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="29"/>
@@ -1081,77 +1081,77 @@ Ceci arrêtera tout module en cours d&apos;exécution et le raccourci clavier gl
     <message>
         <location filename="../qml/main.qml" line="411"/>
         <source>&amp;Pext</source>
-        <translation></translation>
+        <translation>&amp;Pext</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="642"/>
         <source>P&amp;rofile</source>
-        <translation>P&amp;rofil</translation>
+        <translation>P&amp;erfil</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="838"/>
         <source>Automatic updates</source>
-        <translation>Mises à jour automatiques</translation>
+        <translation>Atualizações automáticas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="842"/>
         <source>Automatically check for Pext updates</source>
-        <translation>Vérifier automatiquement les mises à jour pour Pext</translation>
+        <translation>Buscar atualizações do Pext automaticamente</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="871"/>
         <source>Always show tray icon</source>
-        <translation>Toujours afficher l&apos;icône dans la barre de tâche</translation>
+        <translation>Mostrar sempre o ícone da bandeja</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="881"/>
         <source>About</source>
-        <translation>À propos</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="902"/>
         <source>Visit homepage</source>
-        <translation>Visiter la page d&apos;accueil</translation>
+        <translation>Visitar a página inicial</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="984"/>
         <source>Type to search</source>
-        <translation>Taper pour rechercher</translation>
+        <translation>Digite para pesquisar</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1064"/>
         <source>Hotkey reference</source>
-        <translation>Référence de raccourci</translation>
+        <translation>Referência de teclas de atalho</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1162"/>
         <source>Alerts</source>
-        <translation>Alertes</translation>
+        <translation>Alertas</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1164"/>
         <source>Accept</source>
-        <translation>Accepter</translation>
+        <translation>Aceitar</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1168"/>
         <source>Decline</source>
-        <translation>Refuser</translation>
+        <translation>Rejeitar</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1279"/>
         <source>Processing: %1 (%2)</source>
-        <translation>En cours de traitement : %1 (%2)</translation>
+        <translation>A processar: %1 (%2)</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1281"/>
         <source>Ready</source>
-        <translation>Prêt</translation>
+        <translation>Pronto</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="1283"/>
         <source>Waiting</source>
-        <translation>En attente</translation>
+        <translation>À espera</translation>
     </message>
 </context>
 </TS>

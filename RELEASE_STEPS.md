@@ -17,12 +17,12 @@
 ## Preparation
 1. Update the ``<VERSION>`` in ``pext/VERSION``
 2. Update the ``<VERSION>`` in ``Info.plist``
-3. Update the ``<VERSION>`` and ``<DATE>`` in ``CHANGELOG``
+3. Update the ``<VERSION>`` and ``<DATE>`` in ``CHANGELOG.md``
 4. Update the minversion in the repology badge in `README.md`
 5. In case new features have been added, update the current GIF under the head Introduction in `README.md` using ```convert -delay 100 <IMAGES> -loop 0 pext_intro.gif```
 
 ## GitHub
-1. ```git add pext/VERSION Info.plist CHANGELOG README.md```
+1. ```git add pext/VERSION Info.plist CHANGELOG.md README.md```
 2. ```git commit -m "Release Pext v<VERSION>"```
 3. ```git tag -a v<VERSION> -m "Release Pext v<VERSION>"```
 4. ```git push```
@@ -33,14 +33,12 @@
 1. ```python3 setup.py sdist bdist_wheel```
 2. ```twine upload dist/*```
 
-## Open Build Service (OBS)
-1. Update the version number in the _service file
-
 ## Matrix
 1. Change the room topic: `Pext - Python-based Extendable Tool - https://pext.io/ - Latest release: <VERSION> (released <DATE>)`
 
 ## Server
-1. Set version/stable to ```v<VERSION>```
+1. Update links in index.html
+2. Set version/stable to ```v<VERSION>```
 
 ## Afterwards
 1. ```git reset --hard```

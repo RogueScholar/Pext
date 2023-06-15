@@ -1,13 +1,13 @@
 # Pext
 
 <a href="https://repology.org/metapackage/pext/versions">
-    <img src="https://repology.org/badge/vertical-allrepos/pext.svg?minversion=0.28" alt="Packaging status" align="right">
+    <img src="https://repology.org/badge/vertical-allrepos/pext.svg?minversion=0.35" alt="Packaging status" align="right">
 </a>
 
 ![Lilly the leoger](/assets/logo.png)
 
 [![REUSE status](https://api.reuse.software/badge/github.com/Pext/Pext)](https://api.reuse.software/info/github.com/Pext/Pext)
-[![Linux & macOS Build Status](https://travis-ci.org/Pext/Pext.svg?branch=master)](https://travis-ci.org/Pext/Pext)
+[![Linux & macOS Build Status](https://github.com/Pext/Pext/actions/workflows/main.yml/badge.svg)](https://github.com/Pext/Pext/actions/workflows/main.yml)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/73oaa4x1spa5vumx/branch/master?svg=true)](https://ci.appveyor.com/project/TheLastProject/pext/branch/master)
 [![ReadTheDocs](https://readthedocs.org/projects/pext/badge/?version=latest)](https://pext.readthedocs.io/en/latest/?badge=latest)
 [![Translation status](https://hosted.weblate.org/widgets/pext/-/svg-badge.svg)](https://hosted.weblate.org/engage/pext/?utm_source=widget)
@@ -18,7 +18,7 @@
 
 - [Introduction](#introduction)
 - [How it works](#how-it-works)
-- [Installation](https://pext.readthedocs.io/en/latest/installation.html)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Hotkeys](#hotkeys)
 - [Community](#community)
@@ -50,6 +50,10 @@ Simply put:
 - Select (with Enter)
 - Hide (automatically)
 
+## Installation
+
+Check the install instructions at [Read the Docs](https://pext.readthedocs.io/en/latest/installation.html).
+
 ## Usage
 
 To actually use Pext, you will first have to install one or more modules. Check out the Pext organisation on [GitHub](https://github.com/Pext) or use `Module` -> `Install module` -> `From online module list` in the application for a list of modules.
@@ -63,6 +67,7 @@ For command line options, use `--help`.
 ### Entry management
 
 - Escape: Go one level up
+- Shift+Escape: Go up to top level and trigger minimize
 - Tab: Tab-complete the current input
 - Enter / Left mouse button: Select entry or run command
 - Shift+Enter: Select entry or run command but explicitly disable minimizing
@@ -92,11 +97,8 @@ If you need support or just want to chat with our community, we have the followi
 
 - Matrix: #pext:matrix.org ([webchat](https://riot.im/app/#/room/#pext:matrix.org))
 - Telegram: [@PextTool](https://t.me/PextTool)
-- IRC: #pext on FreeNode ([webchat](http://webchat.freenode.net/?channels=%23pext&uio=MTY9dHJ1ZQ79))
 
-All these channels are linked to each other, so there is no need to worry about missing out.
-
-We can also be reached on Twitter: [@PextTool](https://twitter.com/PextTool)
+Both channels are linked to each other, so there is no need to worry about missing out.
 
 ## License
 
